@@ -1,11 +1,12 @@
 //! Engine bridge: owns the long-lived Python ACE-Step worker (`resources/ace_worker.py --serve`).
 //!
 //! One worker, one job at a time. The worker keeps models loaded between jobs.
-//! Cancel kills the worker (the only way to stop ACE-Step mid-diffusion and
+//! Cancel kills the worker's process tree (the only way to stop ACE-Step mid-diffusion and
 //! free the VRAM); the next job starts a fresh worker. A worker that exits on
 //! its own fails the running job and is restarted by the next job.
 
 pub mod gpu;
+mod job;
 pub mod protocol;
 pub mod python;
 
@@ -93,6 +94,7 @@ pub struct EngineStatus {
 
 struct Proc {
     child: Child,
+    tree: job::ProcessTree,
     stdin: ChildStdin,
     launch: Launch,
 }
@@ -253,7 +255,8 @@ impl Engine {
         g.status.pid = Some(child.id());
         g.status.models_loaded = false;
         g.status.model = None;
-        g.proc = Some(Proc { child, stdin, launch: launch.clone() });
+        let tree = job::ProcessTree::adopt(&child);
+        g.proc = Some(Proc { child, tree, stdin, launch: launch.clone() });
 
         let me = self.clone();
         std::thread::spawn(move || me.read_stdout(generation, stdout));
@@ -323,7 +326,7 @@ impl Engine {
     fn kill_locked(&self, g: &mut Inner) {
         g.generation += 1;
         if let Some(mut proc) = g.proc.take() {
-            kill_tree(&mut proc.child);
+            proc.tree.kill(&mut proc.child);
         }
         g.status.state = WorkerState::Stopped;
         g.status.pid = None;
@@ -390,19 +393,6 @@ fn push_unique(list: &mut Vec<String>, item: String) {
     if !list.contains(&item) {
         list.push(item);
     }
-}
-
-/// Kill the worker and everything it started (`uv run` spawns the real python as a child).
-fn kill_tree(child: &mut Child) {
-    #[cfg(windows)]
-    {
-        let mut cmd = Command::new("taskkill");
-        cmd.args(["/T", "/F", "/PID", &child.id().to_string()]).stdout(Stdio::null()).stderr(Stdio::null());
-        no_window(&mut cmd);
-        let _ = cmd.status();
-    }
-    let _ = child.kill();
-    let _ = child.wait();
 }
 
 /// Keep child processes from opening a console window on Windows.
