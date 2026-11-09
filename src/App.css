@@ -1,0 +1,57 @@
+:root {
+  --bg: #f6f5f2;
+  --fg: #1d1d1f;
+  --muted: #6b6b70;
+  --accent: #b5542c;
+  font-family: "Microsoft JhengHei UI", "Noto Sans TC", system-ui, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18181a;
+    --fg: #ececee;
+    --muted: #9a9aa0;
+    --accent: #e08a5e;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+.shell {
+  max-width: 640px;
+  margin: 15vh auto 0;
+  padding: 0 24px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin: 4px 0 24px;
+  color: var(--muted);
+}
+
+.notice {
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 16px;
+  color: var(--muted);
+}
+
+.info dd {
+  margin: 0;
+  color: var(--fg);
+}
