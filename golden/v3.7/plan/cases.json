@@ -1,0 +1,2353 @@
+{
+  "cases": [
+    {
+      "expected": {
+        "bpm": 98,
+        "caption": "acoustic folk, instrumental, fingerpicked steel-string acoustic guitar, mandolin countermelody, diatonic major key, I-IV-V and vi chords, straight eighth-note groove, light hand percussion on 2 and 4, open-string voicings, dry close-mic recording",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "acoustic folk",
+            "instrumental",
+            "fingerpicked steel-string acoustic guitar",
+            "mandolin countermelody",
+            "diatonic major key",
+            "I-IV-V and vi chords",
+            "straight eighth-note groove",
+            "light hand percussion on 2 and 4",
+            "open-string voicings",
+            "dry close-mic recording"
+          ]
+        },
+        "description": "",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "synth",
+            "synth-pad",
+            "guitar-electric"
+          ],
+          "mode": "style",
+          "use": [
+            "guitar-acoustic",
+            "mandolin"
+          ]
+        },
+        "key": "G Major",
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "acoustic-folk",
+        "time_signature": "4",
+        "title": "Acoustic Folk",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-000",
+      "input": {
+        "style": "acoustic-folk"
+      }
+    },
+    {
+      "expected": {
+        "bpm": null,
+        "caption": "ambient, instrumental, sustained synth pads, low drone on the tonic, Lydian mode and major seventh chords, slow harmonic rhythm with one chord per 8 bars, no percussion, no fixed pulse, minimal stepwise melody, soft dynamics pp to mp, long reverb tail",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "ambient",
+            "instrumental",
+            "sustained synth pads",
+            "low drone on the tonic",
+            "Lydian mode and major seventh chords",
+            "slow harmonic rhythm with one chord per 8 bars",
+            "no percussion",
+            "no fixed pulse",
+            "minimal stepwise melody",
+            "soft dynamics pp to mp",
+            "long reverb tail"
+          ]
+        },
+        "description": "",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "drums",
+            "taiko",
+            "snare"
+          ],
+          "mode": "style",
+          "use": [
+            "synth-pad",
+            "drone"
+          ]
+        },
+        "key": "D Major",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "ambient-focus",
+        "time_signature": "4",
+        "title": "Ambient Focus",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-001",
+      "input": {
+        "style": "ambient-focus"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 100,
+        "caption": "downtempo electronic, chillwave, instrumental, analog synth chords, sub bass, half-time beat with soft kick and rimshot, minor ninth and major seventh chords, two-chord vamp, sidechain pumping, low-pass filtered highs, wide stereo",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "downtempo electronic",
+            "chillwave",
+            "instrumental",
+            "analog synth chords",
+            "sub bass",
+            "half-time beat with soft kick and rimshot",
+            "minor ninth and major seventh chords",
+            "two-chord vamp",
+            "sidechain pumping",
+            "low-pass filtered highs",
+            "wide stereo"
+          ]
+        },
+        "description": "",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "guitar-electric",
+            "organ"
+          ],
+          "mode": "style",
+          "use": [
+            "synth",
+            "bass"
+          ]
+        },
+        "key": "C Major",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "chill-electronic",
+        "time_signature": "4",
+        "title": "Chill Electronic",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-002",
+      "input": {
+        "style": "chill-electronic"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 145,
+        "caption": "chiptune, 8-bit, instrumental, square wave lead melody, triangle wave bass, noise channel drums, fast arpeggiated chords, major key, I-V-vi-IV progression, straight sixteenth-note drive, 4-bar repeating phrases, no reverb",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "chiptune",
+            "8-bit",
+            "instrumental",
+            "square wave lead melody",
+            "triangle wave bass",
+            "noise channel drums",
+            "fast arpeggiated chords",
+            "major key",
+            "I-V-vi-IV progression",
+            "straight sixteenth-note drive",
+            "4-bar repeating phrases",
+            "no reverb"
+          ]
+        },
+        "description": "",
+        "duration": 75,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "strings",
+            "violin",
+            "cello",
+            "piano",
+            "guitar-acoustic",
+            "sax"
+          ],
+          "mode": "style",
+          "use": []
+        },
+        "key": "G Major",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "chiptune-adventure",
+        "time_signature": "4",
+        "title": "Chiptune Adventure",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-003",
+      "input": {
+        "style": "chiptune-adventure"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 70,
+        "caption": "cinematic film score, instrumental, solo piano melody, sustained legato strings, natural minor with modal mixture, i-VI-III-VII progression, rubato opening then steady pulse, gradual crescendo from pp to ff, large hall reverb",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "cinematic film score",
+            "instrumental",
+            "solo piano melody",
+            "sustained legato strings",
+            "natural minor with modal mixture",
+            "i-VI-III-VII progression",
+            "rubato opening then steady pulse",
+            "gradual crescendo from pp to ff",
+            "large hall reverb"
+          ]
+        },
+        "description": "",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "synth",
+            "guitar-electric"
+          ],
+          "mode": "style",
+          "use": [
+            "piano",
+            "strings"
+          ]
+        },
+        "key": "A minor",
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "cinematic-emotional",
+        "time_signature": "4",
+        "title": "Cinematic Emotional",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-004",
+      "input": {
+        "style": "cinematic-emotional"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 105,
+        "caption": "cinematic suspense underscore, instrumental, low synth ostinato on one repeated note, ticking percussion in sixteenth notes, dissonant strings, minor-second clusters and tritones, unresolved harmony over a bass pedal, gradual crescendo, high violin harmonics",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "cinematic suspense underscore",
+            "instrumental",
+            "low synth ostinato on one repeated note",
+            "ticking percussion in sixteenth notes",
+            "dissonant strings",
+            "minor-second clusters and tritones",
+            "unresolved harmony over a bass pedal",
+            "gradual crescendo",
+            "high violin harmonics"
+          ]
+        },
+        "description": "",
+        "duration": 75,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "ukulele",
+            "guitar-acoustic",
+            "music-box"
+          ],
+          "mode": "style",
+          "use": [
+            "synth",
+            "strings"
+          ]
+        },
+        "key": "F minor",
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "cinematic-tension",
+        "time_signature": "4",
+        "title": "Cinematic Tension",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-005",
+      "input": {
+        "style": "cinematic-tension"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 110,
+        "caption": "corporate pop, instrumental, strummed acoustic guitar in sixteenths, staccato piano chords, handclaps on 2 and 4, major key, I-V-vi-IV progression, four-on-the-floor kick, clean modern production",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "corporate pop",
+            "instrumental",
+            "strummed acoustic guitar in sixteenths",
+            "staccato piano chords",
+            "handclaps on 2 and 4",
+            "major key",
+            "I-V-vi-IV progression",
+            "four-on-the-floor kick",
+            "clean modern production"
+          ]
+        },
+        "description": "",
+        "duration": 60,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "drone",
+            "organ",
+            "guitar-electric"
+          ],
+          "mode": "style",
+          "use": [
+            "guitar-acoustic",
+            "piano"
+          ]
+        },
+        "key": "C Major",
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "corporate-upbeat",
+        "time_signature": "4",
+        "title": "Corporate Upbeat",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-006",
+      "input": {
+        "style": "corporate-upbeat"
+      }
+    },
+    {
+      "expected": {
+        "bpm": null,
+        "caption": "dark ambient, instrumental, low drone on the tonic, Phrygian mode, tritone intervals and cluster chords, no fixed pulse, sparse metallic percussion hits, bowed metal textures, very soft dynamics, long cavernous reverb",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "dark ambient",
+            "instrumental",
+            "low drone on the tonic",
+            "Phrygian mode",
+            "tritone intervals and cluster chords",
+            "no fixed pulse",
+            "sparse metallic percussion hits",
+            "bowed metal textures",
+            "very soft dynamics",
+            "long cavernous reverb"
+          ]
+        },
+        "description": "",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "ukulele",
+            "marimba",
+            "sax",
+            "accordion"
+          ],
+          "mode": "style",
+          "use": [
+            "drone"
+          ]
+        },
+        "key": "C minor",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "dungeon-ambient",
+        "time_signature": "4",
+        "title": "Dark Dungeon",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-007",
+      "input": {
+        "style": "dungeon-ambient"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 95,
+        "caption": "epic trailer music, instrumental, taiko and orchestral percussion, brass section in octaves, wordless choir, staccato string ostinato, natural minor, i-VI-III-VII progression, risers and braams, three-stage crescendo to fff, big hall reverb",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "epic trailer music",
+            "instrumental",
+            "taiko and orchestral percussion",
+            "brass section in octaves",
+            "wordless choir",
+            "staccato string ostinato",
+            "natural minor",
+            "i-VI-III-VII progression",
+            "risers and braams",
+            "three-stage crescendo to fff",
+            "big hall reverb"
+          ]
+        },
+        "description": "",
+        "duration": 75,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "ukulele",
+            "music-box",
+            "guitar-acoustic"
+          ],
+          "mode": "style",
+          "use": [
+            "taiko",
+            "choir",
+            "trumpet"
+          ]
+        },
+        "key": "D minor",
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "epic-trailer",
+        "time_signature": "4",
+        "title": "Epic Trailer",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-008",
+      "input": {
+        "style": "epic-trailer"
+      }
+    },
+    {
+      "expected": {
+        "bpm": null,
+        "caption": "instrumental",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "instrumental"
+          ]
+        },
+        "description": "",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [],
+          "mode": "style",
+          "use": []
+        },
+        "key": null,
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "from-description",
+        "time_signature": "4",
+        "title": "Free description (no preset style)",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-009",
+      "input": {
+        "style": "from-description"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 95,
+        "caption": "smooth jazz, instrumental, piano trio, walking upright bass, brushed drums, swung eighth notes, ii-V-I progressions, extended seventh and ninth chords, medium swing, soft dynamics, dry close-mic recording",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "smooth jazz",
+            "instrumental",
+            "piano trio",
+            "walking upright bass",
+            "brushed drums",
+            "swung eighth notes",
+            "ii-V-I progressions",
+            "extended seventh and ninth chords",
+            "medium swing",
+            "soft dynamics",
+            "dry close-mic recording"
+          ]
+        },
+        "description": "",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "guitar-electric",
+            "synth"
+          ],
+          "mode": "style",
+          "use": [
+            "piano",
+            "bass",
+            "drums"
+          ]
+        },
+        "key": "D minor",
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "jazz-cafe",
+        "time_signature": "4",
+        "title": "Jazz Café",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-010",
+      "input": {
+        "style": "jazz-cafe"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 79,
+        "caption": "lo-fi hip hop, instrumental, Rhodes piano, minor seventh and ninth chords, Dorian mode, four-chord loop, swung boom bap drums, behind-the-beat groove, soft bass, vinyl crackle, tape saturation, low-pass filtered",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "lo-fi hip hop",
+            "instrumental",
+            "Rhodes piano",
+            "minor seventh and ninth chords",
+            "Dorian mode",
+            "four-chord loop",
+            "swung boom bap drums",
+            "behind-the-beat groove",
+            "soft bass",
+            "vinyl crackle",
+            "tape saturation",
+            "low-pass filtered"
+          ]
+        },
+        "description": "",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "guitar-electric",
+            "trumpet"
+          ],
+          "mode": "style",
+          "use": [
+            "rhodes",
+            "drums",
+            "bass"
+          ]
+        },
+        "key": "F minor",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "lofi",
+        "time_signature": "4",
+        "title": "Lo-fi Chill",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-011",
+      "input": {
+        "style": "lofi"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 65,
+        "caption": "solo piano, instrumental, diatonic major or Aeolian, slow harmonic rhythm, arpeggiated left hand, simple stepwise melody, rubato, soft dynamics pp to mp, sustain pedal, sparse texture, spacious reverb",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "solo piano",
+            "instrumental",
+            "diatonic major or Aeolian",
+            "slow harmonic rhythm",
+            "arpeggiated left hand",
+            "simple stepwise melody",
+            "rubato",
+            "soft dynamics pp to mp",
+            "sustain pedal",
+            "sparse texture",
+            "spacious reverb"
+          ]
+        },
+        "description": "",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "drums",
+            "strings",
+            "synth",
+            "synth-pad",
+            "drone"
+          ],
+          "mode": "style",
+          "use": [
+            "piano"
+          ]
+        },
+        "key": "C Major",
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "nature-piano",
+        "time_signature": "4",
+        "title": "Quiet Piano",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-012",
+      "input": {
+        "style": "nature-piano"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 100,
+        "caption": "light game music, instrumental, staccato piano, marimba melody, pizzicato strings, major key with added sixth chords, dotted-eighth rhythms, 4-bar question and answer phrases, thin texture in the mid and high register, dry room",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "light game music",
+            "instrumental",
+            "staccato piano",
+            "marimba melody",
+            "pizzicato strings",
+            "major key with added sixth chords",
+            "dotted-eighth rhythms",
+            "4-bar question and answer phrases",
+            "thin texture in the mid and high register",
+            "dry room"
+          ]
+        },
+        "description": "",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "bass",
+            "taiko",
+            "guitar-electric"
+          ],
+          "mode": "style",
+          "use": [
+            "piano",
+            "marimba",
+            "strings"
+          ]
+        },
+        "key": "F Major",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "puzzle-calm",
+        "time_signature": "4",
+        "title": "Puzzle Calm",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-013",
+      "input": {
+        "style": "puzzle-calm"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 155,
+        "caption": "orchestral battle music, instrumental, driving strings ostinato in sixteenths, brass stabs on off-beats, taiko drums, harmonic minor, i-bVI-bVII progression, syncopated accents, fast tempo, ff dynamics, repeating 8-bar phrases",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "orchestral battle music",
+            "instrumental",
+            "driving strings ostinato in sixteenths",
+            "brass stabs on off-beats",
+            "taiko drums",
+            "harmonic minor",
+            "i-bVI-bVII progression",
+            "syncopated accents",
+            "fast tempo",
+            "ff dynamics",
+            "repeating 8-bar phrases"
+          ]
+        },
+        "description": "",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "synth-pad",
+            "ukulele",
+            "music-box"
+          ],
+          "mode": "style",
+          "use": [
+            "strings",
+            "trumpet",
+            "taiko"
+          ]
+        },
+        "key": "A minor",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "rpg-battle",
+        "time_signature": "4",
+        "title": "Battle Theme (RPG)",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-014",
+      "input": {
+        "style": "rpg-battle"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 102,
+        "caption": "fantasy RPG village theme, instrumental, acoustic guitar, flute melody, light strings, harp arpeggios, major key with Mixolydian flat seventh, simple diatonic chords, lilting dotted rhythm, 8-bar periodic phrases, moderate dynamics",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "fantasy RPG village theme",
+            "instrumental",
+            "acoustic guitar",
+            "flute melody",
+            "light strings",
+            "harp arpeggios",
+            "major key with Mixolydian flat seventh",
+            "simple diatonic chords",
+            "lilting dotted rhythm",
+            "8-bar periodic phrases",
+            "moderate dynamics"
+          ]
+        },
+        "description": "",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "guitar-electric",
+            "taiko",
+            "synth"
+          ],
+          "mode": "style",
+          "use": [
+            "guitar-acoustic",
+            "flute",
+            "strings",
+            "harp"
+          ]
+        },
+        "key": "C Major",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "rpg-town",
+        "time_signature": "4",
+        "title": "Peaceful Village (RPG)",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-015",
+      "input": {
+        "style": "rpg-town"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 110,
+        "caption": "synthwave, retrowave, instrumental, analog synth arpeggios in sixteenths, gated reverb snare on 2 and 4, pulsing eighth-note bass, sawtooth lead, Aeolian mode, i-VI-III-VII progression, 80s analog production, chorus and delay",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "synthwave",
+            "retrowave",
+            "instrumental",
+            "analog synth arpeggios in sixteenths",
+            "gated reverb snare on 2 and 4",
+            "pulsing eighth-note bass",
+            "sawtooth lead",
+            "Aeolian mode",
+            "i-VI-III-VII progression",
+            "80s analog production",
+            "chorus and delay"
+          ]
+        },
+        "description": "",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "guitar-acoustic",
+            "violin",
+            "cello",
+            "harp",
+            "ukulele"
+          ],
+          "mode": "style",
+          "use": [
+            "synth",
+            "arp",
+            "bass"
+          ]
+        },
+        "key": "A minor",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "synthwave-drive",
+        "time_signature": "4",
+        "title": "Synthwave Drive",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-016",
+      "input": {
+        "style": "synthwave-drive"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 64,
+        "caption": "cinematic orchestral film score, instrumental, sorrowful solo cello melody, legato string section, soft French horn chords, slow marching snare drum, timpani rolls, adagio, lament, tragic, concert hall reverb, low strings, double bass",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [
+            "low strings",
+            "double bass"
+          ],
+          "moods": [],
+          "override": [],
+          "style": [
+            "cinematic orchestral film score",
+            "instrumental",
+            "sorrowful solo cello melody",
+            "legato string section",
+            "soft French horn chords",
+            "slow marching snare drum",
+            "timpani rolls",
+            "adagio",
+            "lament",
+            "tragic",
+            "concert hall reverb"
+          ]
+        },
+        "description": "",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "synth",
+            "synth-pad",
+            "drone",
+            "arp",
+            "ukulele"
+          ],
+          "mode": "style",
+          "use": [
+            "cello",
+            "low-strings",
+            "snare",
+            "french-horn"
+          ]
+        },
+        "key": "B-flat minor",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": -1,
+        "style": "war-requiem",
+        "time_signature": "4",
+        "title": "War Requiem",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-017",
+      "input": {
+        "style": "war-requiem"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 75,
+        "caption": "lo-fi hip hop, instrumental, Rhodes piano, minor seventh and ninth chords, Dorian mode, four-chord loop, swung boom bap drums, behind-the-beat groove, soft bass, soft rain ambience, night time, intimate, steady, unobtrusive",
+        "caption_parts": {
+          "description": [
+            "soft rain ambience",
+            "night time",
+            "intimate",
+            "steady",
+            "unobtrusive"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "lo-fi hip hop",
+            "instrumental",
+            "Rhodes piano",
+            "minor seventh and ninth chords",
+            "Dorian mode",
+            "four-chord loop",
+            "swung boom bap drums",
+            "behind-the-beat groove",
+            "soft bass",
+            "vinyl crackle",
+            "tape saturation",
+            "low-pass filtered"
+          ]
+        },
+        "description": "下雨的夜晚，適合讀書",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "guitar-electric",
+            "trumpet"
+          ],
+          "mode": "style",
+          "use": [
+            "rhodes",
+            "drums",
+            "bass"
+          ]
+        },
+        "key": "C minor",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": 1,
+        "style": "lofi",
+        "time_signature": "4",
+        "title": "下雨的夜晚，適合讀書",
+        "variants": null,
+        "warnings": [
+          "kept the 14 most important tags; dropped: vinyl crackle, tape saturation, low-pass filtered"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-018",
+      "input": {
+        "description": "下雨的夜晚，適合讀書",
+        "seed": 1,
+        "style": "lofi"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 75,
+        "caption": "lo-fi hip hop, instrumental, Rhodes piano, minor seventh and ninth chords, Dorian mode, four-chord loop, soft bass, vinyl crackle, tape saturation, tight drums, no percussion, night time, intimate, rainy",
+        "caption_parts": {
+          "description": [
+            "no percussion",
+            "night time",
+            "intimate",
+            "rainy"
+          ],
+          "extra": [],
+          "instruments": [
+            "tight drums"
+          ],
+          "moods": [],
+          "override": [],
+          "style": [
+            "lo-fi hip hop",
+            "instrumental",
+            "Rhodes piano",
+            "minor seventh and ninth chords",
+            "Dorian mode",
+            "four-chord loop",
+            "soft bass",
+            "vinyl crackle",
+            "tape saturation",
+            "low-pass filtered"
+          ]
+        },
+        "description": "rainy night, no drums",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "guitar-electric",
+            "trumpet"
+          ],
+          "mode": "style",
+          "use": [
+            "rhodes",
+            "drums",
+            "bass"
+          ]
+        },
+        "key": "C minor",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": 2,
+        "style": "lofi",
+        "time_signature": "4",
+        "title": "rainy night, no drums",
+        "variants": null,
+        "warnings": [
+          "kept the 14 most important tags; dropped: low-pass filtered"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-019",
+      "input": {
+        "description": "rainy night, no drums",
+        "seed": 2,
+        "style": "lofi"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 48,
+        "caption": "cinematic orchestral film score, instrumental, sorrowful solo cello melody, legato string section, soft French horn chords, slow marching snare drum, low strings, double bass, somber, defeat, elegiac, solemn sacrifice, tragic heroism, noble sorrow",
+        "caption_parts": {
+          "description": [
+            "somber",
+            "defeat",
+            "elegiac",
+            "solemn sacrifice",
+            "tragic heroism",
+            "noble sorrow"
+          ],
+          "extra": [],
+          "instruments": [
+            "low strings",
+            "double bass"
+          ],
+          "moods": [],
+          "override": [],
+          "style": [
+            "cinematic orchestral film score",
+            "instrumental",
+            "sorrowful solo cello melody",
+            "legato string section",
+            "soft French horn chords",
+            "slow marching snare drum",
+            "timpani rolls",
+            "adagio",
+            "lament",
+            "tragic",
+            "concert hall reverb"
+          ]
+        },
+        "description": "戰敗之後的悲壯與犧牲",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "synth",
+            "synth-pad",
+            "drone",
+            "arp",
+            "ukulele"
+          ],
+          "mode": "style",
+          "use": [
+            "cello",
+            "low-strings",
+            "snare",
+            "french-horn"
+          ]
+        },
+        "key": "C minor",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": 3,
+        "style": "war-requiem",
+        "time_signature": "4",
+        "title": "戰敗之後的悲壯與犧牲",
+        "variants": null,
+        "warnings": [
+          "not understood from your description: 之後與 - add English tags in 'extra tags', or teach it in <workspace>/lexicon.json",
+          "kept the 14 most important tags; dropped: timpani rolls, adagio, lament, tragic, concert hall reverb"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-020",
+      "input": {
+        "description": "戰敗之後的悲壯與犧牲",
+        "seed": 3,
+        "style": "war-requiem"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 60,
+        "caption": "solo piano, instrumental, diatonic major or Aeolian, slow harmonic rhythm, warm piano, airy flute, forest ambience, birdsong, gentle morning light, fresh, calm, soothing, peaceful, hopeful",
+        "caption_parts": {
+          "description": [
+            "warm piano",
+            "airy flute",
+            "forest ambience",
+            "birdsong",
+            "gentle morning light",
+            "fresh"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [
+            "calm",
+            "soothing",
+            "peaceful",
+            "hopeful",
+            "uplifting",
+            "bright"
+          ],
+          "override": [],
+          "style": [
+            "solo piano",
+            "instrumental",
+            "diatonic major or Aeolian",
+            "slow harmonic rhythm",
+            "arpeggiated left hand",
+            "simple stepwise melody",
+            "rubato",
+            "soft dynamics pp to mp",
+            "sustain pedal",
+            "sparse texture",
+            "spacious reverb"
+          ]
+        },
+        "description": "清晨的森林，鋼琴和長笛",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "drums",
+            "strings",
+            "synth",
+            "synth-pad",
+            "drone"
+          ],
+          "mode": "style",
+          "use": [
+            "piano",
+            "flute"
+          ]
+        },
+        "key": "A minor",
+        "loopable": false,
+        "moods": [
+          "calm",
+          "hopeful"
+        ],
+        "quality": null,
+        "seed": 4,
+        "style": "nature-piano",
+        "time_signature": "4",
+        "title": "清晨的森林，鋼琴和長笛",
+        "variants": null,
+        "warnings": [
+          "kept the 14 most important tags; dropped: uplifting, bright, arpeggiated left hand, simple stepwise melody, rubato, soft dynamics pp to mp, sustain pedal, sparse texture, spacious reverb"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-021",
+      "input": {
+        "description": "清晨的森林，鋼琴和長笛",
+        "moods": [
+          "calm",
+          "hopeful"
+        ],
+        "seed": 4,
+        "style": "nature-piano"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 99,
+        "caption": "fantasy RPG village theme, instrumental, major key with Mixolydian flat seventh, simple diatonic chords, lilting dotted rhythm, 8-bar periodic phrases, moderate dynamics, erhu, guzheng, peaceful village, pastoral, cozy, homely, comforting",
+        "caption_parts": {
+          "description": [
+            "peaceful village",
+            "pastoral"
+          ],
+          "extra": [],
+          "instruments": [
+            "erhu",
+            "guzheng"
+          ],
+          "moods": [
+            "cozy",
+            "homely",
+            "comforting"
+          ],
+          "override": [],
+          "style": [
+            "fantasy RPG village theme",
+            "instrumental",
+            "major key with Mixolydian flat seventh",
+            "simple diatonic chords",
+            "lilting dotted rhythm",
+            "8-bar periodic phrases",
+            "moderate dynamics"
+          ]
+        },
+        "description": "熱鬧的村莊",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [],
+          "mode": "custom",
+          "use": [
+            "erhu",
+            "guzheng"
+          ]
+        },
+        "key": "A minor",
+        "loopable": true,
+        "moods": [
+          "cozy"
+        ],
+        "quality": null,
+        "seed": 5,
+        "style": "rpg-town",
+        "time_signature": "4",
+        "title": "熱鬧的村莊",
+        "variants": null,
+        "warnings": [
+          "not understood from your description: 熱鬧 - add English tags in 'extra tags', or teach it in <workspace>/lexicon.json"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-022",
+      "input": {
+        "description": "熱鬧的村莊",
+        "instruments": [
+          "erhu",
+          "guzheng"
+        ],
+        "moods": [
+          "cozy"
+        ],
+        "seed": 5,
+        "style": "rpg-town"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 173,
+        "caption": "orchestral battle music, instrumental, driving strings ostinato in sixteenths, brass stabs on off-beats, taiko drums, harmonic minor, i-bVI-bVII progression, syncopated accents, fast tempo, ff dynamics, frantic chase, urgent, tense, suspenseful",
+        "caption_parts": {
+          "description": [
+            "frantic chase",
+            "urgent",
+            "tense",
+            "suspenseful"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "orchestral battle music",
+            "instrumental",
+            "driving strings ostinato in sixteenths",
+            "brass stabs on off-beats",
+            "taiko drums",
+            "harmonic minor",
+            "i-bVI-bVII progression",
+            "syncopated accents",
+            "fast tempo",
+            "ff dynamics",
+            "repeating 8-bar phrases"
+          ]
+        },
+        "description": "緊張的追逐戰",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "synth-pad",
+            "ukulele",
+            "music-box",
+            "choir"
+          ],
+          "mode": "style",
+          "use": [
+            "strings",
+            "trumpet",
+            "taiko"
+          ]
+        },
+        "key": "D minor",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": 6,
+        "style": "rpg-battle",
+        "time_signature": "4",
+        "title": "緊張的追逐戰",
+        "variants": null,
+        "warnings": [
+          "kept the 14 most important tags; dropped: repeating 8-bar phrases"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-023",
+      "input": {
+        "avoid_instruments": [
+          "choir"
+        ],
+        "description": "緊張的追逐戰",
+        "seed": 6,
+        "style": "rpg-battle"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 121,
+        "caption": "synthwave, retrowave, instrumental, analog synth arpeggios in sixteenths, night time, intimate, urban night city atmosphere, night drive, steady pulse, nostalgic, warm, sentimental, energetic, driving",
+        "caption_parts": {
+          "description": [
+            "night time",
+            "intimate",
+            "urban night city atmosphere",
+            "night drive",
+            "steady pulse"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [
+            "nostalgic",
+            "warm",
+            "sentimental",
+            "energetic",
+            "driving",
+            "high energy"
+          ],
+          "override": [],
+          "style": [
+            "synthwave",
+            "retrowave",
+            "instrumental",
+            "analog synth arpeggios in sixteenths",
+            "gated reverb snare on 2 and 4",
+            "pulsing eighth-note bass",
+            "sawtooth lead",
+            "Aeolian mode",
+            "i-VI-III-VII progression",
+            "80s analog production",
+            "chorus and delay"
+          ]
+        },
+        "description": "夜晚的城市公路",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "guitar-acoustic",
+            "violin",
+            "cello",
+            "harp",
+            "ukulele"
+          ],
+          "mode": "style",
+          "use": [
+            "synth",
+            "arp",
+            "bass"
+          ]
+        },
+        "key": "A minor",
+        "loopable": true,
+        "moods": [
+          "nostalgic",
+          "energetic"
+        ],
+        "quality": null,
+        "seed": 7,
+        "style": "synthwave-drive",
+        "time_signature": "4",
+        "title": "夜晚的城市公路",
+        "variants": null,
+        "warnings": [
+          "kept the 14 most important tags; dropped: high energy, gated reverb snare on 2 and 4, pulsing eighth-note bass, sawtooth lead, Aeolian mode, i-VI-III-VII progression, 80s analog production, chorus and delay"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-024",
+      "input": {
+        "description": "夜晚的城市公路",
+        "moods": [
+          "nostalgic",
+          "energetic"
+        ],
+        "seed": 7,
+        "style": "synthwave-drive"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 95,
+        "caption": "smooth jazz, instrumental, piano trio, walking upright bass, swung eighth notes, ii-V-I progressions, extended seventh and ninth chords, medium swing, soft dynamics, dry close-mic recording, tight drums, smooth saxophone, cozy cafe atmosphere, no percussion",
+        "caption_parts": {
+          "description": [
+            "smooth saxophone",
+            "cozy cafe atmosphere",
+            "no percussion"
+          ],
+          "extra": [],
+          "instruments": [
+            "tight drums"
+          ],
+          "moods": [],
+          "override": [],
+          "style": [
+            "smooth jazz",
+            "instrumental",
+            "piano trio",
+            "walking upright bass",
+            "swung eighth notes",
+            "ii-V-I progressions",
+            "extended seventh and ninth chords",
+            "medium swing",
+            "soft dynamics",
+            "dry close-mic recording"
+          ]
+        },
+        "description": "咖啡店，薩克斯風，不要鼓",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "guitar-electric",
+            "synth"
+          ],
+          "mode": "style",
+          "use": [
+            "piano",
+            "bass",
+            "drums",
+            "sax"
+          ]
+        },
+        "key": "F Major",
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": 8,
+        "style": "jazz-cafe",
+        "time_signature": "4",
+        "title": "咖啡店，薩克斯風，不要鼓",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-025",
+      "input": {
+        "description": "咖啡店，薩克斯風，不要鼓",
+        "seed": 8,
+        "style": "jazz-cafe"
+      }
+    },
+    {
+      "expected": {
+        "bpm": null,
+        "caption": "ambient, instrumental, sustained synth pads, low drone on the tonic, Lydian mode and major seventh chords, slow harmonic rhythm with one chord per 8 bars, no percussion, no fixed pulse, meditative drone, slow breathing, steady, unobtrusive, repetitive, minimal melodic change",
+        "caption_parts": {
+          "description": [
+            "meditative drone",
+            "slow breathing"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [
+            "steady",
+            "unobtrusive",
+            "repetitive",
+            "minimal melodic change"
+          ],
+          "override": [],
+          "style": [
+            "ambient",
+            "instrumental",
+            "sustained synth pads",
+            "low drone on the tonic",
+            "Lydian mode and major seventh chords",
+            "slow harmonic rhythm with one chord per 8 bars",
+            "no percussion",
+            "no fixed pulse",
+            "minimal stepwise melody",
+            "soft dynamics pp to mp",
+            "long reverb tail"
+          ]
+        },
+        "description": "冥想",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "drums",
+            "taiko",
+            "snare"
+          ],
+          "mode": "style",
+          "use": [
+            "synth-pad",
+            "drone"
+          ]
+        },
+        "key": "C Major",
+        "loopable": true,
+        "moods": [
+          "focused"
+        ],
+        "quality": null,
+        "seed": 9,
+        "style": "ambient-focus",
+        "time_signature": "4",
+        "title": "冥想",
+        "variants": null,
+        "warnings": [
+          "kept the 14 most important tags; dropped: minimal stepwise melody, soft dynamics pp to mp, long reverb tail"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-026",
+      "input": {
+        "description": "冥想",
+        "moods": [
+          "focused"
+        ],
+        "seed": 9,
+        "style": "ambient-focus"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 109,
+        "caption": "epic trailer music, instrumental, taiko and orchestral percussion, brass section in octaves, taiko drums, wordless choir pads, medieval castle, noble, epic, grand, powerful, big dynamics, triumphant, victorious",
+        "caption_parts": {
+          "description": [
+            "taiko drums",
+            "wordless choir pads",
+            "medieval castle",
+            "noble"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [
+            "epic",
+            "grand",
+            "powerful",
+            "big dynamics",
+            "triumphant",
+            "victorious",
+            "heroic"
+          ],
+          "override": [],
+          "style": [
+            "epic trailer music",
+            "instrumental",
+            "taiko and orchestral percussion",
+            "brass section in octaves",
+            "wordless choir",
+            "staccato string ostinato",
+            "natural minor",
+            "i-VI-III-VII progression",
+            "risers and braams",
+            "three-stage crescendo to fff",
+            "big hall reverb"
+          ]
+        },
+        "description": "壯麗的城堡，合唱與太鼓",
+        "duration": 75,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "ukulele",
+            "music-box",
+            "guitar-acoustic"
+          ],
+          "mode": "style",
+          "use": [
+            "taiko",
+            "choir",
+            "trumpet"
+          ]
+        },
+        "key": "D minor",
+        "loopable": false,
+        "moods": [
+          "epic",
+          "triumphant"
+        ],
+        "quality": null,
+        "seed": 10,
+        "style": "epic-trailer",
+        "time_signature": "4",
+        "title": "壯麗的城堡，合唱與太鼓",
+        "variants": null,
+        "warnings": [
+          "not understood from your description: 壯麗 - add English tags in 'extra tags', or teach it in <workspace>/lexicon.json",
+          "kept the 14 most important tags; dropped: heroic, wordless choir, staccato string ostinato, natural minor, i-VI-III-VII progression, risers and braams, three-stage crescendo to fff, big hall reverb"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-027",
+      "input": {
+        "description": "壯麗的城堡，合唱與太鼓",
+        "moods": [
+          "epic",
+          "triumphant"
+        ],
+        "seed": 10,
+        "style": "epic-trailer"
+      }
+    },
+    {
+      "expected": {
+        "bpm": null,
+        "caption": "dark ambient, instrumental, low drone on the tonic, Phrygian mode, dark horror atmosphere, dissonance, dark dungeon, echoing, eerie, haunting, unsettling, dark, brooding, ominous",
+        "caption_parts": {
+          "description": [
+            "dark horror atmosphere",
+            "dissonance",
+            "dark dungeon",
+            "echoing"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [
+            "eerie",
+            "haunting",
+            "unsettling",
+            "dark",
+            "brooding",
+            "ominous"
+          ],
+          "override": [],
+          "style": [
+            "dark ambient",
+            "instrumental",
+            "low drone on the tonic",
+            "Phrygian mode",
+            "tritone intervals and cluster chords",
+            "no fixed pulse",
+            "sparse metallic percussion hits",
+            "bowed metal textures",
+            "very soft dynamics",
+            "long cavernous reverb"
+          ]
+        },
+        "description": "洞穴裡的恐怖氣氛",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "ukulele",
+            "marimba",
+            "sax",
+            "accordion"
+          ],
+          "mode": "style",
+          "use": [
+            "drone"
+          ]
+        },
+        "key": "F# minor",
+        "loopable": true,
+        "moods": [
+          "eerie",
+          "dark"
+        ],
+        "quality": null,
+        "seed": 11,
+        "style": "dungeon-ambient",
+        "time_signature": "4",
+        "title": "洞穴裡的恐怖氣氛",
+        "variants": null,
+        "warnings": [
+          "not understood from your description: 裡氣氛 - add English tags in 'extra tags', or teach it in <workspace>/lexicon.json",
+          "kept the 14 most important tags; dropped: tritone intervals and cluster chords, no fixed pulse, sparse metallic percussion hits, bowed metal textures, very soft dynamics, long cavernous reverb"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-028",
+      "input": {
+        "description": "洞穴裡的恐怖氣氛",
+        "moods": [
+          "eerie",
+          "dark"
+        ],
+        "seed": 11,
+        "style": "dungeon-ambient"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 150,
+        "caption": "chiptune, 8-bit, instrumental, square wave lead melody, triangle wave bass, noise channel drums, fast arpeggiated chords, major key, I-V-vi-IV progression, joyful, bright, playful, bouncy, cheerful",
+        "caption_parts": {
+          "description": [
+            "joyful",
+            "bright"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [
+            "playful",
+            "bouncy",
+            "cheerful"
+          ],
+          "override": [],
+          "style": [
+            "chiptune",
+            "8-bit",
+            "instrumental",
+            "square wave lead melody",
+            "triangle wave bass",
+            "noise channel drums",
+            "fast arpeggiated chords",
+            "major key",
+            "I-V-vi-IV progression",
+            "straight sixteenth-note drive",
+            "4-bar repeating phrases",
+            "no reverb"
+          ]
+        },
+        "description": "快樂的冒險",
+        "duration": 75,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "strings",
+            "violin",
+            "cello",
+            "piano",
+            "guitar-acoustic",
+            "sax"
+          ],
+          "mode": "style",
+          "use": []
+        },
+        "key": "A minor",
+        "loopable": true,
+        "moods": [
+          "playful"
+        ],
+        "quality": null,
+        "seed": 12,
+        "style": "chiptune-adventure",
+        "time_signature": "4",
+        "title": "快樂的冒險",
+        "variants": null,
+        "warnings": [
+          "not understood from your description: 冒險 - add English tags in 'extra tags', or teach it in <workspace>/lexicon.json",
+          "kept the 14 most important tags; dropped: straight sixteenth-note drive, 4-bar repeating phrases, no reverb"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-029",
+      "input": {
+        "bpm": 150,
+        "description": "快樂的冒險",
+        "moods": [
+          "playful"
+        ],
+        "seed": 12,
+        "style": "chiptune-adventure"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 70,
+        "caption": "cinematic film score, instrumental, solo piano melody, sustained legato strings, natural minor with modal mixture, i-VI-III-VII progression, rubato opening then steady pulse, gradual crescendo from pp to ff, large hall reverb, romantic, elegant",
+        "caption_parts": {
+          "description": [
+            "romantic",
+            "elegant"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "cinematic film score",
+            "instrumental",
+            "solo piano melody",
+            "sustained legato strings",
+            "natural minor with modal mixture",
+            "i-VI-III-VII progression",
+            "rubato opening then steady pulse",
+            "gradual crescendo from pp to ff",
+            "large hall reverb"
+          ]
+        },
+        "description": "婚禮",
+        "duration": 200,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "synth",
+            "guitar-electric"
+          ],
+          "mode": "style",
+          "use": [
+            "piano",
+            "strings"
+          ]
+        },
+        "key": "Eb Major",
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": 13,
+        "style": "cinematic-emotional",
+        "time_signature": "4",
+        "title": "婚禮",
+        "variants": null,
+        "warnings": [
+          "200s is long for ACE-Step: instrumentals are most stable at 30-180 s. For longer pieces generate ~2 min and loop it."
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-030",
+      "input": {
+        "description": "婚禮",
+        "duration": 200,
+        "seed": 13,
+        "style": "cinematic-emotional"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 110,
+        "caption": "corporate pop, instrumental, strummed acoustic guitar in sixteenths, staccato piano chords, handclaps on 2 and 4, major key, I-V-vi-IV progression, four-on-the-floor kick, clean modern production, ukulele, claps",
+        "caption_parts": {
+          "description": [],
+          "extra": [
+            "ukulele",
+            "claps"
+          ],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "corporate pop",
+            "instrumental",
+            "strummed acoustic guitar in sixteenths",
+            "staccato piano chords",
+            "handclaps on 2 and 4",
+            "major key",
+            "I-V-vi-IV progression",
+            "four-on-the-floor kick",
+            "clean modern production"
+          ]
+        },
+        "description": "",
+        "duration": 60,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "drone",
+            "organ",
+            "guitar-electric"
+          ],
+          "mode": "style",
+          "use": [
+            "guitar-acoustic",
+            "piano"
+          ]
+        },
+        "key": "G Major",
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": 14,
+        "style": "corporate-upbeat",
+        "time_signature": "4",
+        "title": "Corporate Upbeat",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-031",
+      "input": {
+        "caption_extra": "ukulele, claps",
+        "description": "",
+        "seed": 14,
+        "style": "corporate-upbeat"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 98,
+        "caption": "marimba, soft pads, 90 bpm, playful",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [
+            "marimba",
+            "soft pads",
+            "90 bpm",
+            "playful"
+          ],
+          "style": []
+        },
+        "description": "解謎",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "bass",
+            "taiko",
+            "guitar-electric"
+          ],
+          "mode": "style",
+          "use": [
+            "piano",
+            "marimba",
+            "strings"
+          ]
+        },
+        "key": "G Major",
+        "loopable": true,
+        "moods": [],
+        "quality": null,
+        "seed": 15,
+        "style": "puzzle-calm",
+        "time_signature": "4",
+        "title": "解謎",
+        "variants": null,
+        "warnings": [],
+        "workflow": "quick"
+      },
+      "id": "plan-032",
+      "input": {
+        "caption_override": "marimba, soft pads, 90 bpm, playful",
+        "description": "解謎",
+        "seed": 15,
+        "style": "puzzle-calm"
+      }
+    },
+    {
+      "expected": {
+        "bpm": null,
+        "caption": "instrumental",
+        "caption_parts": {
+          "description": [],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "instrumental"
+          ]
+        },
+        "description": "一段完全聽不懂的描述 xyzzy",
+        "duration": 90,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [],
+          "mode": "style",
+          "use": []
+        },
+        "key": null,
+        "loopable": false,
+        "moods": [],
+        "quality": null,
+        "seed": 16,
+        "style": "from-description",
+        "time_signature": "4",
+        "title": "一段完全聽不懂的描述 xyzzy",
+        "variants": null,
+        "warnings": [
+          "not understood from your description: 完全聽不懂描述xyzzy - add English tags in 'extra tags', or teach it in <workspace>/lexicon.json"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-033",
+      "input": {
+        "description": "一段完全聽不懂的描述 xyzzy",
+        "seed": 16,
+        "style": "from-description"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 62,
+        "caption": "lo-fi hip hop, instrumental, Rhodes piano, minor seventh and ninth chords, smooth saxophone, expressive solo violin, warm cello, marimba, warm piano, fingerpicked acoustic guitar, airy flute, gentle harp, brass section, soft bells",
+        "caption_parts": {
+          "description": [
+            "smooth saxophone",
+            "expressive solo violin",
+            "warm cello",
+            "marimba",
+            "warm piano",
+            "fingerpicked acoustic guitar",
+            "airy flute",
+            "gentle harp",
+            "brass section",
+            "soft bells",
+            "glockenspiel",
+            "wordless choir pads",
+            "erhu",
+            "guzheng",
+            "shakuhachi flute"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [
+            "calm",
+            "soothing",
+            "peaceful",
+            "melancholic",
+            "wistful",
+            "bittersweet",
+            "nostalgic",
+            "warm",
+            "sentimental"
+          ],
+          "override": [],
+          "style": [
+            "lo-fi hip hop",
+            "instrumental",
+            "Rhodes piano",
+            "minor seventh and ninth chords",
+            "Dorian mode",
+            "four-chord loop",
+            "swung boom bap drums",
+            "behind-the-beat groove",
+            "soft bass",
+            "vinyl crackle",
+            "tape saturation",
+            "low-pass filtered"
+          ]
+        },
+        "description": "鋼琴 吉他 小提琴 大提琴 長笛 豎琴 薩克斯風 小號 馬林巴 鐘聲 合唱 二胡 古箏 尺八",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "guitar-electric"
+          ],
+          "mode": "style",
+          "use": [
+            "rhodes",
+            "drums",
+            "bass",
+            "sax",
+            "violin",
+            "cello",
+            "marimba",
+            "piano",
+            "guitar-acoustic",
+            "flute",
+            "harp",
+            "trumpet",
+            "bells",
+            "choir",
+            "erhu",
+            "guzheng",
+            "shakuhachi"
+          ]
+        },
+        "key": "Eb Major",
+        "loopable": true,
+        "moods": [
+          "calm",
+          "melancholic",
+          "nostalgic"
+        ],
+        "quality": null,
+        "seed": 17,
+        "style": "lofi",
+        "time_signature": "4",
+        "title": "鋼琴 吉他 小提琴 大提琴 長笛 豎琴 薩克斯風 小號 馬林巴 鐘聲 合唱 二胡",
+        "variants": null,
+        "warnings": [
+          "this style usually avoids 小號 - kept because your description asks for it",
+          "kept the 14 most important tags; dropped: glockenspiel, wordless choir pads, erhu, guzheng, shakuhachi flute, calm, soothing, peaceful, melancholic, wistful, bittersweet, nostalgic, warm, sentimental, Dorian mode, four-chord loop, swung boom bap drums, behind-the-beat groove, soft bass, vinyl crackle, tape saturation, low-pass filtered"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-034",
+      "input": {
+        "description": "鋼琴 吉他 小提琴 大提琴 長笛 豎琴 薩克斯風 小號 馬林巴 鐘聲 合唱 二胡 古箏 尺八",
+        "moods": [
+          "calm",
+          "melancholic",
+          "nostalgic"
+        ],
+        "seed": 17,
+        "style": "lofi"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 102,
+        "caption": "acoustic folk, instrumental, fingerpicked steel-string acoustic guitar, mandolin countermelody, diatonic major key, I-IV-V and vi chords, straight eighth-note groove, light hand percussion on 2 and 4, open-string voicings, dry close-mic recording, ocean waves ambience, sunny summer, breezy",
+        "caption_parts": {
+          "description": [
+            "ocean waves ambience",
+            "sunny summer",
+            "breezy"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [],
+          "override": [],
+          "style": [
+            "acoustic folk",
+            "instrumental",
+            "fingerpicked steel-string acoustic guitar",
+            "mandolin countermelody",
+            "diatonic major key",
+            "I-IV-V and vi chords",
+            "straight eighth-note groove",
+            "light hand percussion on 2 and 4",
+            "open-string voicings",
+            "dry close-mic recording"
+          ]
+        },
+        "description": "夏天的海邊",
+        "duration": 120,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [
+            "synth",
+            "synth-pad",
+            "guitar-electric"
+          ],
+          "mode": "style",
+          "use": [
+            "guitar-acoustic",
+            "mandolin"
+          ]
+        },
+        "key": "D major",
+        "loopable": false,
+        "moods": [],
+        "quality": "high",
+        "seed": 18,
+        "style": "acoustic-folk",
+        "time_signature": "3",
+        "title": "夏天的海邊",
+        "variants": 3,
+        "warnings": [],
+        "workflow": "game-bgm"
+      },
+      "id": "plan-035",
+      "input": {
+        "description": "夏天的海邊",
+        "key": "D major",
+        "quality": "high",
+        "seed": 18,
+        "style": "acoustic-folk",
+        "time_signature": "3",
+        "variants": 3,
+        "workflow": "game-bgm"
+      }
+    },
+    {
+      "expected": {
+        "bpm": 129,
+        "caption": "cinematic suspense underscore, instrumental, ticking percussion in sixteenth notes, minor-second clusters and tritones, unresolved harmony over a bass pedal, gradual crescendo, high violin harmonics, frantic chase, urgent, tense, suspenseful, uneasy",
+        "caption_parts": {
+          "description": [
+            "frantic chase",
+            "urgent",
+            "tense",
+            "suspenseful"
+          ],
+          "extra": [],
+          "instruments": [],
+          "moods": [
+            "tense",
+            "suspenseful",
+            "uneasy"
+          ],
+          "override": [],
+          "style": [
+            "cinematic suspense underscore",
+            "instrumental",
+            "ticking percussion in sixteenth notes",
+            "minor-second clusters and tritones",
+            "unresolved harmony over a bass pedal",
+            "gradual crescendo",
+            "high violin harmonics"
+          ]
+        },
+        "description": "tense chase",
+        "duration": 75,
+        "instrumental": true,
+        "instruments": {
+          "avoid": [],
+          "mode": "custom",
+          "use": []
+        },
+        "key": "C# minor",
+        "loopable": false,
+        "moods": [
+          "tense",
+          "unknown-mood"
+        ],
+        "quality": null,
+        "seed": 19,
+        "style": "cinematic-tension",
+        "time_signature": "4",
+        "title": "tense chase",
+        "variants": null,
+        "warnings": [
+          "unknown mood 'unknown-mood' ignored",
+          "unknown instrument id(s) ignored: not-an-instrument (see `msconfig.py instruments`)"
+        ],
+        "workflow": "quick"
+      },
+      "id": "plan-036",
+      "input": {
+        "description": "tense chase",
+        "instruments": [
+          "not-an-instrument"
+        ],
+        "moods": [
+          "tense",
+          "unknown-mood"
+        ],
+        "seed": 19,
+        "style": "cinematic-tension"
+      }
+    }
+  ],
+  "function": "msconfig.build_spec"
+}

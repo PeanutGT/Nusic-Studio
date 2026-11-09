@@ -1,0 +1,2958 @@
+{
+  "cases": [
+    {
+      "expected": "G Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk||None"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk||0"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk||1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk||42"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk||12345"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk||-1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|下雨的夜晚|None"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|下雨的夜晚|0"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|下雨的夜晚|1"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|下雨的夜晚|42"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|下雨的夜晚|12345"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|下雨的夜晚|-1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|battle|None"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|battle|0"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|battle|1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|battle|42"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|battle|12345"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "G Major",
+        "D Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "acoustic-folk|battle|-1"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus||None"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus||0"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus||1"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus||42"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus||12345"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus||-1"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|下雨的夜晚|None"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|下雨的夜晚|0"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|下雨的夜晚|1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|下雨的夜晚|42"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|下雨的夜晚|12345"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|下雨的夜晚|-1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|battle|None"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|battle|0"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|battle|1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|battle|42"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|battle|12345"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "D Major",
+        "F Major"
+      ],
+      "seed_string": "ambient-focus|battle|-1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic||None"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic||0"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic||1"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic||42"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic||12345"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic||-1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|下雨的夜晚|None"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|下雨的夜晚|0"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|下雨的夜晚|1"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|下雨的夜晚|42"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|下雨的夜晚|12345"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|下雨的夜晚|-1"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|battle|None"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|battle|0"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|battle|1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|battle|42"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|battle|12345"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "F minor",
+        "A minor",
+        "C Major",
+        "D minor"
+      ],
+      "seed_string": "chill-electronic|battle|-1"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure||None"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure||0"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure||1"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure||42"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure||12345"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure||-1"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|下雨的夜晚|None"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|下雨的夜晚|0"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|下雨的夜晚|1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|下雨的夜晚|42"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|下雨的夜晚|12345"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|下雨的夜晚|-1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|battle|None"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|battle|0"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|battle|1"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|battle|42"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|battle|12345"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "G Major",
+        "A minor",
+        "E minor"
+      ],
+      "seed_string": "chiptune-adventure|battle|-1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional||None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional||0"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional||1"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional||42"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional||12345"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional||-1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|下雨的夜晚|None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|下雨的夜晚|0"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|下雨的夜晚|1"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|下雨的夜晚|42"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|下雨的夜晚|12345"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|下雨的夜晚|-1"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|battle|None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|battle|0"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|battle|1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|battle|42"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|battle|12345"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "cinematic-emotional|battle|-1"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension||None"
+    },
+    {
+      "expected": "C# minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension||0"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension||1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension||42"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension||12345"
+    },
+    {
+      "expected": "C# minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension||-1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|下雨的夜晚|None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|下雨的夜晚|0"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|下雨的夜晚|1"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|下雨的夜晚|42"
+    },
+    {
+      "expected": "C# minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|下雨的夜晚|12345"
+    },
+    {
+      "expected": "C# minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|下雨的夜晚|-1"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|battle|None"
+    },
+    {
+      "expected": "C# minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|battle|0"
+    },
+    {
+      "expected": "C# minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|battle|1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|battle|42"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|battle|12345"
+    },
+    {
+      "expected": "C# minor",
+      "options": [
+        "C# minor",
+        "F minor",
+        "D minor"
+      ],
+      "seed_string": "cinematic-tension|battle|-1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat||None"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat||0"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat||1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat||42"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat||12345"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat||-1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|下雨的夜晚|None"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|下雨的夜晚|0"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|下雨的夜晚|1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|下雨的夜晚|42"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|下雨的夜晚|12345"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|下雨的夜晚|-1"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|battle|None"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|battle|0"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|battle|1"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|battle|42"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|battle|12345"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "G Major",
+        "D Major"
+      ],
+      "seed_string": "corporate-upbeat|battle|-1"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient||None"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient||0"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient||1"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient||42"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient||12345"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient||-1"
+    },
+    {
+      "expected": "F# minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|下雨的夜晚|None"
+    },
+    {
+      "expected": "F# minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|下雨的夜晚|0"
+    },
+    {
+      "expected": "F# minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|下雨的夜晚|1"
+    },
+    {
+      "expected": "F# minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|下雨的夜晚|42"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|下雨的夜晚|12345"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|下雨的夜晚|-1"
+    },
+    {
+      "expected": "F# minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|battle|None"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|battle|0"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|battle|1"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|battle|42"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|battle|12345"
+    },
+    {
+      "expected": "F# minor",
+      "options": [
+        "E minor",
+        "C minor",
+        "F# minor"
+      ],
+      "seed_string": "dungeon-ambient|battle|-1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer||None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer||0"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer||1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer||42"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer||12345"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer||-1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|下雨的夜晚|None"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|下雨的夜晚|0"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|下雨的夜晚|1"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|下雨的夜晚|42"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|下雨的夜晚|12345"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|下雨的夜晚|-1"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|battle|None"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|battle|0"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|battle|1"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|battle|42"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|battle|12345"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "F minor"
+      ],
+      "seed_string": "epic-trailer|battle|-1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe||None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe||0"
+    },
+    {
+      "expected": "G minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe||1"
+    },
+    {
+      "expected": "G minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe||42"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe||12345"
+    },
+    {
+      "expected": "Bb Major",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe||-1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|下雨的夜晚|None"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|下雨的夜晚|0"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|下雨的夜晚|1"
+    },
+    {
+      "expected": "G minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|下雨的夜晚|42"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|下雨的夜晚|12345"
+    },
+    {
+      "expected": "Bb Major",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|下雨的夜晚|-1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|battle|None"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|battle|0"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|battle|1"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|battle|42"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|battle|12345"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "Bb Major",
+        "F Major",
+        "D minor",
+        "G minor"
+      ],
+      "seed_string": "jazz-cafe|battle|-1"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi||None"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi||0"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi||1"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi||42"
+    },
+    {
+      "expected": "Eb Major",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi||12345"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi||-1"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|下雨的夜晚|None"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|下雨的夜晚|0"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|下雨的夜晚|1"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|下雨的夜晚|42"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|下雨的夜晚|12345"
+    },
+    {
+      "expected": "F minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|下雨的夜晚|-1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|battle|None"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|battle|0"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|battle|1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|battle|42"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|battle|12345"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "C minor",
+        "F minor",
+        "A minor",
+        "Eb Major"
+      ],
+      "seed_string": "lofi|battle|-1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano||None"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano||0"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano||1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano||42"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano||12345"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano||-1"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|下雨的夜晚|None"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|下雨的夜晚|0"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|下雨的夜晚|1"
+    },
+    {
+      "expected": "Ab Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|下雨的夜晚|42"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|下雨的夜晚|12345"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|下雨的夜晚|-1"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|battle|None"
+    },
+    {
+      "expected": "Ab Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|battle|0"
+    },
+    {
+      "expected": "Ab Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|battle|1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|battle|42"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|battle|12345"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "A minor",
+        "E minor",
+        "Ab Major"
+      ],
+      "seed_string": "nature-piano|battle|-1"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm||None"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm||0"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm||1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm||42"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm||12345"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm||-1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|下雨的夜晚|None"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|下雨的夜晚|0"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|下雨的夜晚|1"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|下雨的夜晚|42"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|下雨的夜晚|12345"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|下雨的夜晚|-1"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|battle|None"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|battle|0"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|battle|1"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|battle|42"
+    },
+    {
+      "expected": "F Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|battle|12345"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "C Major",
+        "F Major",
+        "G Major"
+      ],
+      "seed_string": "puzzle-calm|battle|-1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle||None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle||0"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle||1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle||42"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle||12345"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle||-1"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|下雨的夜晚|None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|下雨的夜晚|0"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|下雨的夜晚|1"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|下雨的夜晚|42"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|下雨的夜晚|12345"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|下雨的夜晚|-1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|battle|None"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|battle|0"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|battle|1"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|battle|42"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|battle|12345"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "E minor",
+        "C minor",
+        "A minor"
+      ],
+      "seed_string": "rpg-battle|battle|-1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town||None"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town||0"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town||1"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town||42"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town||12345"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town||-1"
+    },
+    {
+      "expected": "C Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|下雨的夜晚|None"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|下雨的夜晚|0"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|下雨的夜晚|1"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|下雨的夜晚|42"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|下雨的夜晚|12345"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|下雨的夜晚|-1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|battle|None"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|battle|0"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|battle|1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|battle|42"
+    },
+    {
+      "expected": "G Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|battle|12345"
+    },
+    {
+      "expected": "D Major",
+      "options": [
+        "D Major",
+        "G Major",
+        "A minor",
+        "C Major"
+      ],
+      "seed_string": "rpg-town|battle|-1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive||None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive||0"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive||1"
+    },
+    {
+      "expected": "F# minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive||42"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive||12345"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive||-1"
+    },
+    {
+      "expected": "F# minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|下雨的夜晚|None"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|下雨的夜晚|0"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|下雨的夜晚|1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|下雨的夜晚|42"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|下雨的夜晚|12345"
+    },
+    {
+      "expected": "F# minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|下雨的夜晚|-1"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|battle|None"
+    },
+    {
+      "expected": "A minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|battle|0"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|battle|1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|battle|42"
+    },
+    {
+      "expected": "E minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|battle|12345"
+    },
+    {
+      "expected": "F# minor",
+      "options": [
+        "A minor",
+        "E minor",
+        "F# minor",
+        "D minor"
+      ],
+      "seed_string": "synthwave-drive|battle|-1"
+    },
+    {
+      "expected": "B-flat minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem||None"
+    },
+    {
+      "expected": "B-flat minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem||0"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem||1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem||42"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem||12345"
+    },
+    {
+      "expected": "B-flat minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem||-1"
+    },
+    {
+      "expected": "G minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|下雨的夜晚|None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|下雨的夜晚|0"
+    },
+    {
+      "expected": "B-flat minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|下雨的夜晚|1"
+    },
+    {
+      "expected": "G minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|下雨的夜晚|42"
+    },
+    {
+      "expected": "C minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|下雨的夜晚|12345"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|下雨的夜晚|-1"
+    },
+    {
+      "expected": "G minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|battle|None"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|battle|0"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|battle|1"
+    },
+    {
+      "expected": "D minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|battle|42"
+    },
+    {
+      "expected": "G minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|battle|12345"
+    },
+    {
+      "expected": "G minor",
+      "options": [
+        "D minor",
+        "C minor",
+        "G minor",
+        "B-flat minor"
+      ],
+      "seed_string": "war-requiem|battle|-1"
+    }
+  ],
+  "function": "random.Random(seed_string).choice(options)",
+  "note": "build_spec picks the key this way; seed_string is f'{style_id}|{description}|{seed}' with Python's str(None) == 'None'. Python seeds MT19937 from SHA-512 of the string (random.seed version 2)."
+}

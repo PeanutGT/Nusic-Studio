@@ -1,0 +1,861 @@
+{
+  "cases": [
+    {
+      "audio": "audio/clean.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": 1e-05,
+          "duration": 20.0,
+          "head_silence_s": 0.0,
+          "lra": 4.1,
+          "lufs": -14.27,
+          "peak_dbfs": -8.88,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 0.0,
+            "level_jump_db": 16.84,
+            "seam_vs_typical": 2.58,
+            "typical_step_db": 6.54
+          },
+          "tail_silence_s": 0.03,
+          "true_peak_db": -8.88
+        },
+        "brightness": {
+          "hf_pct": 8.23,
+          "rolloff95_hz": 6000
+        },
+        "inspect_audio": [],
+        "loudnorm": {
+          "gain_db": -1.73,
+          "notes": [
+            "loudness -14.3 -> -16.0 LUFS (linear gain -1.7 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -14.3 LUFS is off target -16.0"
+        ],
+        "seam_metrics": {
+          "click_ratio": 0.0,
+          "level_jump_db": 16.84,
+          "seam_vs_typical": 2.58,
+          "typical_step_db": 6.54
+        }
+      },
+      "id": "clean",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/drums.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 222,
+          "dc_offset": 1e-05,
+          "duration": 20.0,
+          "head_silence_s": 0.0,
+          "lra": 4.6,
+          "lufs": -15.86,
+          "peak_dbfs": 0.0,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 1.42,
+            "level_jump_db": 18.74,
+            "seam_vs_typical": 6.21,
+            "typical_step_db": 3.02
+          },
+          "tail_silence_s": 0.06,
+          "true_peak_db": 2.22
+        },
+        "brightness": {
+          "hf_pct": 60.33,
+          "rolloff95_hz": 22230
+        },
+        "inspect_audio": [],
+        "loudnorm": {
+          "gain_db": -4.22,
+          "notes": [
+            "loudness -15.9 -> -20.1 LUFS (linear gain -4.2 dB)"
+          ],
+          "warnings": [
+            "loudnorm: peaks allow only -20.1 LUFS (target -16.0); kept the dynamics instead of compressing"
+          ]
+        },
+        "qc_notes": [
+          "true peak 2.2 dB above ceiling -1.5",
+          "222 clipped samples"
+        ],
+        "seam_metrics": {
+          "click_ratio": 1.42,
+          "level_jump_db": 18.74,
+          "seam_vs_typical": 6.21,
+          "typical_step_db": 3.02
+        }
+      },
+      "id": "drums",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/click.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": 1e-05,
+          "duration": 20.0,
+          "head_silence_s": 0.0,
+          "lra": 4.1,
+          "lufs": -14.27,
+          "peak_dbfs": -6.02,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 0.0,
+            "level_jump_db": 16.84,
+            "seam_vs_typical": 2.58,
+            "typical_step_db": 6.54
+          },
+          "tail_silence_s": 0.03,
+          "true_peak_db": -6.02
+        },
+        "brightness": {
+          "hf_pct": 8.23,
+          "rolloff95_hz": 6000
+        },
+        "inspect_audio": [
+          {
+            "at": 5.0,
+            "code": "clicks",
+            "count": 1
+          }
+        ],
+        "loudnorm": {
+          "gain_db": -1.73,
+          "notes": [
+            "loudness -14.3 -> -16.0 LUFS (linear gain -1.7 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -14.3 LUFS is off target -16.0"
+        ],
+        "seam_metrics": {
+          "click_ratio": 0.0,
+          "level_jump_db": 16.84,
+          "seam_vs_typical": 2.58,
+          "typical_step_db": 6.54
+        }
+      },
+      "id": "click",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/gap.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": 1e-05,
+          "duration": 20.0,
+          "head_silence_s": 0.0,
+          "lra": 4.3,
+          "lufs": -14.57,
+          "peak_dbfs": -8.88,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 0.0,
+            "level_jump_db": 16.84,
+            "seam_vs_typical": 2.58,
+            "typical_step_db": 6.54
+          },
+          "tail_silence_s": 0.03,
+          "true_peak_db": -8.88
+        },
+        "brightness": {
+          "hf_pct": 8.51,
+          "rolloff95_hz": 6000
+        },
+        "inspect_audio": [
+          {
+            "at": 6.0,
+            "code": "silence",
+            "end": 9.0
+          }
+        ],
+        "loudnorm": {
+          "gain_db": -1.43,
+          "notes": [
+            "loudness -14.6 -> -16.0 LUFS (linear gain -1.4 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -14.6 LUFS is off target -16.0"
+        ],
+        "seam_metrics": {
+          "click_ratio": 0.0,
+          "level_jump_db": 16.84,
+          "seam_vs_typical": 2.58,
+          "typical_step_db": 6.54
+        }
+      },
+      "id": "gap",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/cut_off.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": 0.0,
+          "duration": 10.0,
+          "head_silence_s": 0.0,
+          "lra": 1.7,
+          "lufs": -14.2,
+          "peak_dbfs": -8.88,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 1.59,
+            "level_jump_db": 6.54,
+            "seam_vs_typical": 1.0,
+            "typical_step_db": 6.54
+          },
+          "tail_silence_s": 0.0,
+          "true_peak_db": -8.88
+        },
+        "brightness": {
+          "hf_pct": 8.33,
+          "rolloff95_hz": 6000
+        },
+        "inspect_audio": [
+          {
+            "at": 9.9,
+            "code": "cut_off"
+          }
+        ],
+        "loudnorm": {
+          "gain_db": -1.8,
+          "notes": [
+            "loudness -14.2 -> -16.0 LUFS (linear gain -1.8 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -14.2 LUFS is off target -16.0"
+        ],
+        "seam_metrics": {
+          "click_ratio": 1.59,
+          "level_jump_db": 6.54,
+          "seam_vs_typical": 1.0,
+          "typical_step_db": 6.54
+        }
+      },
+      "id": "cut_off",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/cut_off_loopable.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": 0.0,
+          "duration": 10.0,
+          "head_silence_s": 0.0,
+          "lra": 1.7,
+          "lufs": -14.2,
+          "peak_dbfs": -8.88,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 1.59,
+            "level_jump_db": 6.54,
+            "seam_vs_typical": 1.0,
+            "typical_step_db": 6.54
+          },
+          "tail_silence_s": 0.0,
+          "true_peak_db": -8.88
+        },
+        "brightness": {
+          "hf_pct": 8.33,
+          "rolloff95_hz": 6000
+        },
+        "inspect_audio": [],
+        "loudnorm": {
+          "gain_db": -1.8,
+          "notes": [
+            "loudness -14.2 -> -16.0 LUFS (linear gain -1.8 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -14.2 LUFS is off target -16.0"
+        ],
+        "seam_metrics": {
+          "click_ratio": 1.59,
+          "level_jump_db": 6.54,
+          "seam_vs_typical": 1.0,
+          "typical_step_db": 6.54
+        }
+      },
+      "id": "cut_off_loopable",
+      "input": {
+        "bar_samples": null,
+        "loopable": true,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/clipped.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 360788,
+          "dc_offset": 3e-05,
+          "duration": 20.0,
+          "head_silence_s": 0.0,
+          "lra": 3.0,
+          "lufs": -1.46,
+          "peak_dbfs": 0.0,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 0.0,
+            "level_jump_db": 15.27,
+            "seam_vs_typical": 3.05,
+            "typical_step_db": 5.01
+          },
+          "tail_silence_s": 0.01,
+          "true_peak_db": 0.21
+        },
+        "brightness": {
+          "hf_pct": 8.55,
+          "rolloff95_hz": 6000
+        },
+        "inspect_audio": [
+          {
+            "at": 0.0,
+            "code": "clipping",
+            "count": 49766
+          }
+        ],
+        "loudnorm": {
+          "gain_db": -14.54,
+          "notes": [
+            "loudness -1.5 -> -16.0 LUFS (linear gain -14.5 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -1.5 LUFS is off target -16.0",
+          "true peak 0.2 dB above ceiling -1.5",
+          "360788 clipped samples"
+        ],
+        "seam_metrics": {
+          "click_ratio": 0.0,
+          "level_jump_db": 15.27,
+          "seam_vs_typical": 3.05,
+          "typical_step_db": 5.01
+        }
+      },
+      "id": "clipped",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/near_silent.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": 0.0,
+          "duration": 20.0,
+          "head_silence_s": null,
+          "lra": 0.0,
+          "lufs": null,
+          "peak_dbfs": -90.31,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 0.0,
+            "level_jump_db": 87.17,
+            "seam_vs_typical": 10.3,
+            "typical_step_db": 8.46
+          },
+          "tail_silence_s": null,
+          "true_peak_db": -88.05
+        },
+        "brightness": null,
+        "inspect_audio": [
+          {
+            "at": 0.0,
+            "code": "near_silent"
+          }
+        ],
+        "loudnorm": {
+          "gain_db": 0.0,
+          "notes": [],
+          "warnings": [
+            "loudnorm: audio is (almost) silent, skipped"
+          ]
+        },
+        "qc_notes": [],
+        "seam_metrics": {
+          "click_ratio": 0.0,
+          "level_jump_db": 87.17,
+          "seam_vs_typical": 10.3,
+          "typical_step_db": 8.46
+        }
+      },
+      "id": "near_silent",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/low_volume.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": 0.0,
+          "duration": 20.0,
+          "head_silence_s": 0.0,
+          "lra": 4.1,
+          "lufs": -34.27,
+          "peak_dbfs": -28.87,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 0.0,
+            "level_jump_db": 16.84,
+            "seam_vs_typical": 2.58,
+            "typical_step_db": 6.54
+          },
+          "tail_silence_s": 0.53,
+          "true_peak_db": -28.87
+        },
+        "brightness": {
+          "hf_pct": 8.22,
+          "rolloff95_hz": 6000
+        },
+        "inspect_audio": [
+          {
+            "at": 0.0,
+            "code": "low_volume",
+            "rms_db": -38.3
+          }
+        ],
+        "loudnorm": {
+          "gain_db": 18.27,
+          "notes": [
+            "loudness -34.3 -> -16.0 LUFS (linear gain +18.3 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -34.3 LUFS is off target -16.0"
+        ],
+        "seam_metrics": {
+          "click_ratio": 0.0,
+          "level_jump_db": 16.84,
+          "seam_vs_typical": 2.58,
+          "typical_step_db": 6.54
+        }
+      },
+      "id": "low_volume",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/dull.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": 1e-05,
+          "duration": 20.0,
+          "head_silence_s": 0.0,
+          "lra": 4.4,
+          "lufs": -15.2,
+          "peak_dbfs": -10.46,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 0.0,
+            "level_jump_db": 17.61,
+            "seam_vs_typical": 2.37,
+            "typical_step_db": 7.44
+          },
+          "tail_silence_s": 0.04,
+          "true_peak_db": -10.46
+        },
+        "brightness": {
+          "hf_pct": 0.0,
+          "rolloff95_hz": 234
+        },
+        "inspect_audio": [
+          {
+            "at": 0.0,
+            "code": "dull",
+            "hf_pct": 0.0,
+            "rolloff95_hz": 234
+          }
+        ],
+        "loudnorm": {
+          "gain_db": -0.8,
+          "notes": [
+            "loudness -15.2 -> -16.0 LUFS (linear gain -0.8 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [],
+        "seam_metrics": {
+          "click_ratio": 0.0,
+          "level_jump_db": 17.61,
+          "seam_vs_typical": 2.37,
+          "typical_step_db": 7.44
+        }
+      },
+      "id": "dull",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/tail_hiss.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": -0.0,
+          "duration": 20.0,
+          "head_silence_s": 0.0,
+          "lra": 1.7,
+          "lufs": -14.07,
+          "peak_dbfs": -8.88,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 0.04,
+            "level_jump_db": 51.99,
+            "seam_vs_typical": 7.95,
+            "typical_step_db": 6.54
+          },
+          "tail_silence_s": 0.01,
+          "true_peak_db": -8.88
+        },
+        "brightness": {
+          "hf_pct": 8.33,
+          "rolloff95_hz": 6000
+        },
+        "inspect_audio": [],
+        "loudnorm": {
+          "gain_db": -1.93,
+          "notes": [
+            "loudness -14.1 -> -16.0 LUFS (linear gain -1.9 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -14.1 LUFS is off target -16.0"
+        ],
+        "seam_metrics": {
+          "click_ratio": 0.04,
+          "level_jump_db": 51.99,
+          "seam_vs_typical": 7.95,
+          "typical_step_db": 6.54
+        }
+      },
+      "id": "tail_hiss",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/tail_gap.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": -0.0,
+          "duration": 20.0,
+          "head_silence_s": 0.0,
+          "lra": 3.6,
+          "lufs": -13.94,
+          "peak_dbfs": -8.88,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 0.04,
+            "level_jump_db": 51.99,
+            "seam_vs_typical": 7.95,
+            "typical_step_db": 6.54
+          },
+          "tail_silence_s": 0.01,
+          "true_peak_db": -8.88
+        },
+        "brightness": {
+          "hf_pct": 8.07,
+          "rolloff95_hz": 6000
+        },
+        "inspect_audio": [
+          {
+            "at": 16.0,
+            "code": "silence",
+            "end": 18.0
+          }
+        ],
+        "loudnorm": {
+          "gain_db": -2.06,
+          "notes": [
+            "loudness -13.9 -> -16.0 LUFS (linear gain -2.1 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -13.9 LUFS is off target -16.0"
+        ],
+        "seam_metrics": {
+          "click_ratio": 0.04,
+          "level_jump_db": 51.99,
+          "seam_vs_typical": 7.95,
+          "typical_step_db": 6.54
+        }
+      },
+      "id": "tail_gap",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/periodic_loop.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": 0.0,
+          "duration": 16.0,
+          "head_silence_s": 0.0,
+          "lra": 0.0,
+          "lufs": -11.35,
+          "peak_dbfs": -10.46,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 1.57,
+            "level_jump_db": 0.0,
+            "seam_vs_typical": 0.0,
+            "typical_step_db": 0.5
+          },
+          "tail_silence_s": 0.0,
+          "true_peak_db": -10.46
+        },
+        "brightness": {
+          "hf_pct": 0.0,
+          "rolloff95_hz": 234
+        },
+        "inspect_audio": [
+          {
+            "at": 0.0,
+            "code": "dull",
+            "hf_pct": 0.0,
+            "rolloff95_hz": 234
+          }
+        ],
+        "loudnorm": {
+          "gain_db": -4.65,
+          "notes": [
+            "loudness -11.3 -> -16.0 LUFS (linear gain -4.7 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -11.3 LUFS is off target -16.0"
+        ],
+        "seam_metrics": {
+          "click_ratio": 1.57,
+          "level_jump_db": 0.0,
+          "seam_vs_typical": 0.0,
+          "typical_step_db": 0.5
+        }
+      },
+      "id": "periodic_loop",
+      "input": {
+        "bar_samples": 104727,
+        "loopable": true,
+        "looped": true,
+        "loudnorm": {
+          "target_lufs": -16.0,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    },
+    {
+      "audio": "audio/wide_dynamics.flac",
+      "expected": {
+        "analyze_array": {
+          "clipped_samples": 0,
+          "dc_offset": 0.0,
+          "duration": 30.0,
+          "head_silence_s": 0.0,
+          "lra": 18.4,
+          "lufs": -8.87,
+          "peak_dbfs": -6.02,
+          "sample_rate": 48000,
+          "seam": {
+            "click_ratio": 3.18,
+            "level_jump_db": 18.42,
+            "seam_vs_typical": 36.83,
+            "typical_step_db": 0.5
+          },
+          "tail_silence_s": 0.0,
+          "true_peak_db": -6.02
+        },
+        "brightness": {
+          "hf_pct": 0.0,
+          "rolloff95_hz": 445
+        },
+        "inspect_audio": [
+          {
+            "at": 29.9,
+            "code": "cut_off"
+          },
+          {
+            "at": 0.0,
+            "code": "dull",
+            "hf_pct": 0.0,
+            "rolloff95_hz": 445
+          }
+        ],
+        "loudnorm": {
+          "gain_db": -7.13,
+          "notes": [
+            "loudness -8.9 -> -16.0 LUFS (linear gain -7.1 dB)"
+          ],
+          "warnings": []
+        },
+        "qc_notes": [
+          "loudness -8.9 LUFS is off target -16.0"
+        ],
+        "seam_metrics": {
+          "click_ratio": 3.18,
+          "level_jump_db": 18.42,
+          "seam_vs_typical": 36.83,
+          "typical_step_db": 0.5
+        }
+      },
+      "id": "wide_dynamics",
+      "input": {
+        "bar_samples": null,
+        "loopable": false,
+        "looped": false,
+        "loudnorm": {
+          "target_lufs": -16,
+          "true_peak_db": -1.5
+        },
+        "lufs_target": -16.0,
+        "true_peak_target": -1.5
+      }
+    }
+  ],
+  "functions": [
+    "postprocess.inspect_audio",
+    "postprocess.analyze_array",
+    "postprocess.qc",
+    "postprocess.brightness",
+    "postprocess.seam_metrics",
+    "postprocess.op_loudnorm"
+  ],
+  "note": "lufs / true_peak_db / lra come from ffmpeg loudnorm (EBU R128); compare with a tolerance.",
+  "sample_rate": 48000
+}

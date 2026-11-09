@@ -1,0 +1,1513 @@
+{
+  "cases": [
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": null,
+          "offload_dit_to_cpu": true,
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "draft",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:draft",
+          "dit_model": "tier:low",
+          "duration": "generation",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:draft",
+          "instrumental": "generation",
+          "lm_model": "tier:low",
+          "offload_dit_to_cpu": "tier:low",
+          "offload_to_cpu": "tier:low",
+          "quantization": "tier:low",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "preset:draft"
+        },
+        "tier": "low",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "draft",
+        "tier": "low"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 120,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": null,
+          "offload_dit_to_cpu": true,
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "draft",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "tier:low",
+          "duration": "request",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:draft",
+          "instrumental": "generation",
+          "lm_model": "tier:low",
+          "offload_dit_to_cpu": "tier:low",
+          "offload_to_cpu": "tier:low",
+          "quantization": "tier:low",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "request"
+        },
+        "tier": "low",
+        "warnings": [
+          "duration 400s exceeds the low tier cap (120s); clamped. Raise hardware.tiers.low.max_duration if your card copes.",
+          "you asked for 8 variants but the low tier allows 1; using 1.",
+          "the low tier has no language model, so 'thinking' is off."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "draft",
+        "tier": "low"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": null,
+          "offload_dit_to_cpu": true,
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "standard",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:standard",
+          "dit_model": "tier:low",
+          "duration": "generation",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:standard",
+          "instrumental": "generation",
+          "lm_model": "tier:low",
+          "offload_dit_to_cpu": "tier:low",
+          "offload_to_cpu": "tier:low",
+          "quantization": "tier:low",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "preset:standard"
+        },
+        "tier": "low",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "standard",
+        "tier": "low"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 120,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": null,
+          "offload_dit_to_cpu": true,
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "standard",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "tier:low",
+          "duration": "request",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:standard",
+          "instrumental": "generation",
+          "lm_model": "tier:low",
+          "offload_dit_to_cpu": "tier:low",
+          "offload_to_cpu": "tier:low",
+          "quantization": "tier:low",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "request"
+        },
+        "tier": "low",
+        "warnings": [
+          "duration 400s exceeds the low tier cap (120s); clamped. Raise hardware.tiers.low.max_duration if your card copes.",
+          "you asked for 8 variants but the low tier allows 1; using 1.",
+          "the low tier has no language model, so 'thinking' is off."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "standard",
+        "tier": "low"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-sft",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 50,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": null,
+          "offload_dit_to_cpu": true,
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "high",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:high",
+          "dit_model": "preset:high",
+          "duration": "generation",
+          "guidance_scale": "preset:high",
+          "inference_steps": "preset:high",
+          "instrumental": "generation",
+          "lm_model": "tier:low",
+          "offload_dit_to_cpu": "tier:low",
+          "offload_to_cpu": "tier:low",
+          "quantization": "tier:low",
+          "seed": "generation",
+          "shift": "preset:high",
+          "thinking": "preset:high"
+        },
+        "tier": "low",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "high",
+        "tier": "low"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-sft",
+          "duration": 120,
+          "guidance_scale": 7.0,
+          "inference_steps": 50,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": null,
+          "offload_dit_to_cpu": true,
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "high",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "preset:high",
+          "duration": "request",
+          "guidance_scale": "preset:high",
+          "inference_steps": "preset:high",
+          "instrumental": "generation",
+          "lm_model": "tier:low",
+          "offload_dit_to_cpu": "tier:low",
+          "offload_to_cpu": "tier:low",
+          "quantization": "tier:low",
+          "seed": "generation",
+          "shift": "preset:high",
+          "thinking": "request"
+        },
+        "tier": "low",
+        "warnings": [
+          "duration 400s exceeds the low tier cap (120s); clamped. Raise hardware.tiers.low.max_duration if your card copes.",
+          "you asked for 8 variants but the low tier allows 1; using 1.",
+          "the low tier has no language model, so 'thinking' is off."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "high",
+        "tier": "low"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-sft",
+          "duration": 60,
+          "guidance_scale": 8.0,
+          "inference_steps": 64,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": null,
+          "offload_dit_to_cpu": true,
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "max",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:max",
+          "dit_model": "preset:max",
+          "duration": "generation",
+          "guidance_scale": "preset:max",
+          "inference_steps": "preset:max",
+          "instrumental": "generation",
+          "lm_model": "tier:low",
+          "offload_dit_to_cpu": "tier:low",
+          "offload_to_cpu": "tier:low",
+          "quantization": "tier:low",
+          "seed": "generation",
+          "shift": "preset:max",
+          "thinking": "preset:max"
+        },
+        "tier": "low",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "max",
+        "tier": "low"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-sft",
+          "duration": 120,
+          "guidance_scale": 8.0,
+          "inference_steps": 64,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": null,
+          "offload_dit_to_cpu": true,
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "max",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "preset:max",
+          "duration": "request",
+          "guidance_scale": "preset:max",
+          "inference_steps": "preset:max",
+          "instrumental": "generation",
+          "lm_model": "tier:low",
+          "offload_dit_to_cpu": "tier:low",
+          "offload_to_cpu": "tier:low",
+          "quantization": "tier:low",
+          "seed": "generation",
+          "shift": "preset:max",
+          "thinking": "request"
+        },
+        "tier": "low",
+        "warnings": [
+          "duration 400s exceeds the low tier cap (120s); clamped. Raise hardware.tiers.low.max_duration if your card copes.",
+          "you asked for 8 variants but the low tier allows 1; using 1.",
+          "the low tier has no language model, so 'thinking' is off."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "max",
+        "tier": "low"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-0.6B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "draft",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:draft",
+          "dit_model": "tier:mid",
+          "duration": "generation",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:draft",
+          "instrumental": "generation",
+          "lm_model": "tier:mid",
+          "offload_to_cpu": "tier:mid",
+          "quantization": "tier:mid",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "preset:draft"
+        },
+        "tier": "mid",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "draft",
+        "tier": "mid"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 180,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-0.6B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "draft",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "tier:mid",
+          "duration": "request",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:draft",
+          "instrumental": "generation",
+          "lm_model": "tier:mid",
+          "offload_to_cpu": "tier:mid",
+          "quantization": "tier:mid",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "request"
+        },
+        "tier": "mid",
+        "warnings": [
+          "duration 400s exceeds the mid tier cap (180s); clamped. Raise hardware.tiers.mid.max_duration if your card copes.",
+          "you asked for 8 variants but the mid tier allows 2; using 2."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "draft",
+        "tier": "mid"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-0.6B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "standard",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:standard",
+          "dit_model": "tier:mid",
+          "duration": "generation",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:standard",
+          "instrumental": "generation",
+          "lm_model": "tier:mid",
+          "offload_to_cpu": "tier:mid",
+          "quantization": "tier:mid",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "preset:standard"
+        },
+        "tier": "mid",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "standard",
+        "tier": "mid"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 180,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-0.6B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "standard",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "tier:mid",
+          "duration": "request",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:standard",
+          "instrumental": "generation",
+          "lm_model": "tier:mid",
+          "offload_to_cpu": "tier:mid",
+          "quantization": "tier:mid",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "request"
+        },
+        "tier": "mid",
+        "warnings": [
+          "duration 400s exceeds the mid tier cap (180s); clamped. Raise hardware.tiers.mid.max_duration if your card copes.",
+          "you asked for 8 variants but the mid tier allows 2; using 2."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "standard",
+        "tier": "mid"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-sft",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 50,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-0.6B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "high",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:high",
+          "dit_model": "preset:high",
+          "duration": "generation",
+          "guidance_scale": "preset:high",
+          "inference_steps": "preset:high",
+          "instrumental": "generation",
+          "lm_model": "tier:mid",
+          "offload_to_cpu": "tier:mid",
+          "quantization": "tier:mid",
+          "seed": "generation",
+          "shift": "preset:high",
+          "thinking": "preset:high"
+        },
+        "tier": "mid",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "high",
+        "tier": "mid"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-sft",
+          "duration": 180,
+          "guidance_scale": 7.0,
+          "inference_steps": 50,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-0.6B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "high",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "preset:high",
+          "duration": "request",
+          "guidance_scale": "preset:high",
+          "inference_steps": "preset:high",
+          "instrumental": "generation",
+          "lm_model": "tier:mid",
+          "offload_to_cpu": "tier:mid",
+          "quantization": "tier:mid",
+          "seed": "generation",
+          "shift": "preset:high",
+          "thinking": "request"
+        },
+        "tier": "mid",
+        "warnings": [
+          "duration 400s exceeds the mid tier cap (180s); clamped. Raise hardware.tiers.mid.max_duration if your card copes.",
+          "you asked for 8 variants but the mid tier allows 2; using 2."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "high",
+        "tier": "mid"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-sft",
+          "duration": 60,
+          "guidance_scale": 8.0,
+          "inference_steps": 64,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-0.6B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "max",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:max",
+          "dit_model": "preset:max",
+          "duration": "generation",
+          "guidance_scale": "preset:max",
+          "inference_steps": "preset:max",
+          "instrumental": "generation",
+          "lm_model": "tier:mid",
+          "offload_to_cpu": "tier:mid",
+          "quantization": "tier:mid",
+          "seed": "generation",
+          "shift": "preset:max",
+          "thinking": "preset:max"
+        },
+        "tier": "mid",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "max",
+        "tier": "mid"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-sft",
+          "duration": 180,
+          "guidance_scale": 8.0,
+          "inference_steps": 64,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-0.6B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "max",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "preset:max",
+          "duration": "request",
+          "guidance_scale": "preset:max",
+          "inference_steps": "preset:max",
+          "instrumental": "generation",
+          "lm_model": "tier:mid",
+          "offload_to_cpu": "tier:mid",
+          "quantization": "tier:mid",
+          "seed": "generation",
+          "shift": "preset:max",
+          "thinking": "request"
+        },
+        "tier": "mid",
+        "warnings": [
+          "duration 400s exceeds the mid tier cap (180s); clamped. Raise hardware.tiers.mid.max_duration if your card copes.",
+          "you asked for 8 variants but the mid tier allows 2; using 2."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "max",
+        "tier": "mid"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-1.7B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "draft",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:draft",
+          "dit_model": "tier:high",
+          "duration": "generation",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:draft",
+          "instrumental": "generation",
+          "lm_model": "tier:high",
+          "offload_to_cpu": "tier:high",
+          "quantization": "tier:high",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "preset:draft"
+        },
+        "tier": "high",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "draft",
+        "tier": "high"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 240,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-1.7B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "draft",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "tier:high",
+          "duration": "request",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:draft",
+          "instrumental": "generation",
+          "lm_model": "tier:high",
+          "offload_to_cpu": "tier:high",
+          "quantization": "tier:high",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "request"
+        },
+        "tier": "high",
+        "warnings": [
+          "duration 400s exceeds the high tier cap (240s); clamped. Raise hardware.tiers.high.max_duration if your card copes.",
+          "you asked for 8 variants but the high tier allows 2; using 2."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "draft",
+        "tier": "high"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-1.7B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "standard",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:standard",
+          "dit_model": "tier:high",
+          "duration": "generation",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:standard",
+          "instrumental": "generation",
+          "lm_model": "tier:high",
+          "offload_to_cpu": "tier:high",
+          "quantization": "tier:high",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "preset:standard"
+        },
+        "tier": "high",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "standard",
+        "tier": "high"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-turbo",
+          "duration": 240,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-1.7B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "standard",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "tier:high",
+          "duration": "request",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:standard",
+          "instrumental": "generation",
+          "lm_model": "tier:high",
+          "offload_to_cpu": "tier:high",
+          "quantization": "tier:high",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "request"
+        },
+        "tier": "high",
+        "warnings": [
+          "duration 400s exceeds the high tier cap (240s); clamped. Raise hardware.tiers.high.max_duration if your card copes.",
+          "you asked for 8 variants but the high tier allows 2; using 2."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "standard",
+        "tier": "high"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-sft",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 50,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-1.7B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "high",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:high",
+          "dit_model": "preset:high",
+          "duration": "generation",
+          "guidance_scale": "preset:high",
+          "inference_steps": "preset:high",
+          "instrumental": "generation",
+          "lm_model": "tier:high",
+          "offload_to_cpu": "tier:high",
+          "quantization": "tier:high",
+          "seed": "generation",
+          "shift": "preset:high",
+          "thinking": "preset:high"
+        },
+        "tier": "high",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "high",
+        "tier": "high"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-sft",
+          "duration": 240,
+          "guidance_scale": 7.0,
+          "inference_steps": 50,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-1.7B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "high",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "preset:high",
+          "duration": "request",
+          "guidance_scale": "preset:high",
+          "inference_steps": "preset:high",
+          "instrumental": "generation",
+          "lm_model": "tier:high",
+          "offload_to_cpu": "tier:high",
+          "quantization": "tier:high",
+          "seed": "generation",
+          "shift": "preset:high",
+          "thinking": "request"
+        },
+        "tier": "high",
+        "warnings": [
+          "duration 400s exceeds the high tier cap (240s); clamped. Raise hardware.tiers.high.max_duration if your card copes.",
+          "you asked for 8 variants but the high tier allows 2; using 2."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "high",
+        "tier": "high"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-sft",
+          "duration": 60,
+          "guidance_scale": 8.0,
+          "inference_steps": 64,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-1.7B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "max",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:max",
+          "dit_model": "preset:max",
+          "duration": "generation",
+          "guidance_scale": "preset:max",
+          "inference_steps": "preset:max",
+          "instrumental": "generation",
+          "lm_model": "tier:high",
+          "offload_to_cpu": "tier:high",
+          "quantization": "tier:high",
+          "seed": "generation",
+          "shift": "preset:max",
+          "thinking": "preset:max"
+        },
+        "tier": "high",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "max",
+        "tier": "high"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-sft",
+          "duration": 240,
+          "guidance_scale": 8.0,
+          "inference_steps": 64,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-1.7B",
+          "offload_to_cpu": true,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "max",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "preset:max",
+          "duration": "request",
+          "guidance_scale": "preset:max",
+          "inference_steps": "preset:max",
+          "instrumental": "generation",
+          "lm_model": "tier:high",
+          "offload_to_cpu": "tier:high",
+          "quantization": "tier:high",
+          "seed": "generation",
+          "shift": "preset:max",
+          "thinking": "request"
+        },
+        "tier": "high",
+        "warnings": [
+          "duration 400s exceeds the high tier cap (240s); clamped. Raise hardware.tiers.high.max_duration if your card copes.",
+          "you asked for 8 variants but the high tier allows 2; using 2."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "max",
+        "tier": "high"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 3,
+          "dit_model": "acestep-v15-xl-turbo",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-4B",
+          "offload_to_cpu": false,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": false
+        },
+        "quality": "draft",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:draft",
+          "dit_model": "tier:ultra",
+          "duration": "generation",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:draft",
+          "instrumental": "generation",
+          "lm_model": "tier:ultra",
+          "offload_to_cpu": "tier:ultra",
+          "quantization": "tier:ultra",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "preset:draft"
+        },
+        "tier": "ultra",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "draft",
+        "tier": "ultra"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 4,
+          "dit_model": "acestep-v15-xl-turbo",
+          "duration": 300,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-4B",
+          "offload_to_cpu": false,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "draft",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "tier:ultra",
+          "duration": "request",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:draft",
+          "instrumental": "generation",
+          "lm_model": "tier:ultra",
+          "offload_to_cpu": "tier:ultra",
+          "quantization": "tier:ultra",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "request"
+        },
+        "tier": "ultra",
+        "warnings": [
+          "duration 400s exceeds the ultra tier cap (300s); clamped. Raise hardware.tiers.ultra.max_duration if your card copes.",
+          "you asked for 8 variants but the ultra tier allows 4; using 4."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "draft",
+        "tier": "ultra"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-xl-turbo",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-4B",
+          "offload_to_cpu": false,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "standard",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:standard",
+          "dit_model": "tier:ultra",
+          "duration": "generation",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:standard",
+          "instrumental": "generation",
+          "lm_model": "tier:ultra",
+          "offload_to_cpu": "tier:ultra",
+          "quantization": "tier:ultra",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "preset:standard"
+        },
+        "tier": "ultra",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "standard",
+        "tier": "ultra"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 4,
+          "dit_model": "acestep-v15-xl-turbo",
+          "duration": 300,
+          "guidance_scale": 7.0,
+          "inference_steps": 8,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-4B",
+          "offload_to_cpu": false,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "standard",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "tier:ultra",
+          "duration": "request",
+          "guidance_scale": "generation",
+          "inference_steps": "preset:standard",
+          "instrumental": "generation",
+          "lm_model": "tier:ultra",
+          "offload_to_cpu": "tier:ultra",
+          "quantization": "tier:ultra",
+          "seed": "generation",
+          "shift": "generation",
+          "thinking": "request"
+        },
+        "tier": "ultra",
+        "warnings": [
+          "duration 400s exceeds the ultra tier cap (300s); clamped. Raise hardware.tiers.ultra.max_duration if your card copes.",
+          "you asked for 8 variants but the ultra tier allows 4; using 4."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "standard",
+        "tier": "ultra"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 2,
+          "dit_model": "acestep-v15-sft",
+          "duration": 60,
+          "guidance_scale": 7.0,
+          "inference_steps": 50,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-4B",
+          "offload_to_cpu": false,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "high",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:high",
+          "dit_model": "preset:high",
+          "duration": "generation",
+          "guidance_scale": "preset:high",
+          "inference_steps": "preset:high",
+          "instrumental": "generation",
+          "lm_model": "tier:ultra",
+          "offload_to_cpu": "tier:ultra",
+          "quantization": "tier:ultra",
+          "seed": "generation",
+          "shift": "preset:high",
+          "thinking": "preset:high"
+        },
+        "tier": "ultra",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "high",
+        "tier": "ultra"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 4,
+          "dit_model": "acestep-v15-sft",
+          "duration": 300,
+          "guidance_scale": 7.0,
+          "inference_steps": 50,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-4B",
+          "offload_to_cpu": false,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "high",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "preset:high",
+          "duration": "request",
+          "guidance_scale": "preset:high",
+          "inference_steps": "preset:high",
+          "instrumental": "generation",
+          "lm_model": "tier:ultra",
+          "offload_to_cpu": "tier:ultra",
+          "quantization": "tier:ultra",
+          "seed": "generation",
+          "shift": "preset:high",
+          "thinking": "request"
+        },
+        "tier": "ultra",
+        "warnings": [
+          "duration 400s exceeds the ultra tier cap (300s); clamped. Raise hardware.tiers.ultra.max_duration if your card copes.",
+          "you asked for 8 variants but the ultra tier allows 4; using 4."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "high",
+        "tier": "ultra"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 1,
+          "dit_model": "acestep-v15-sft",
+          "duration": 60,
+          "guidance_scale": 8.0,
+          "inference_steps": 64,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-4B",
+          "offload_to_cpu": false,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "max",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "preset:max",
+          "dit_model": "preset:max",
+          "duration": "generation",
+          "guidance_scale": "preset:max",
+          "inference_steps": "preset:max",
+          "instrumental": "generation",
+          "lm_model": "tier:ultra",
+          "offload_to_cpu": "tier:ultra",
+          "quantization": "tier:ultra",
+          "seed": "generation",
+          "shift": "preset:max",
+          "thinking": "preset:max"
+        },
+        "tier": "ultra",
+        "warnings": []
+      },
+      "input": {
+        "overrides": null,
+        "quality": "max",
+        "tier": "ultra"
+      }
+    },
+    {
+      "expected": {
+        "params": {
+          "audio_format": "flac",
+          "batch_size": 4,
+          "dit_model": "acestep-v15-sft",
+          "duration": 300,
+          "guidance_scale": 8.0,
+          "inference_steps": 64,
+          "instrumental": true,
+          "lm_backend": "pt",
+          "lm_model": "acestep-5Hz-lm-4B",
+          "offload_to_cpu": false,
+          "quantization": null,
+          "seed": -1,
+          "shift": 3.0,
+          "thinking": true
+        },
+        "quality": "max",
+        "sources": {
+          "audio_format": "generation",
+          "batch_size": "request",
+          "dit_model": "preset:max",
+          "duration": "request",
+          "guidance_scale": "preset:max",
+          "inference_steps": "preset:max",
+          "instrumental": "generation",
+          "lm_model": "tier:ultra",
+          "offload_to_cpu": "tier:ultra",
+          "quantization": "tier:ultra",
+          "seed": "generation",
+          "shift": "preset:max",
+          "thinking": "request"
+        },
+        "tier": "ultra",
+        "warnings": [
+          "duration 400s exceeds the ultra tier cap (300s); clamped. Raise hardware.tiers.ultra.max_duration if your card copes.",
+          "you asked for 8 variants but the ultra tier allows 4; using 4."
+        ]
+      },
+      "input": {
+        "overrides": {
+          "batch_size": 8,
+          "duration": 400,
+          "thinking": true
+        },
+        "quality": "max",
+        "tier": "ultra"
+      }
+    }
+  ],
+  "function": "msconfig.resolve_params"
+}

@@ -1,0 +1,7 @@
+{
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "numpy": "2.5.3",
+  "skill_version": "3.7.0",
+  "source": "PeanutGT/NutsSkills skills/music-studio",
+  "source_commit": "7757e7824e027e1959cefebdda6019a7b5b0f443"
+}
