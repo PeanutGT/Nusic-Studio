@@ -2,42 +2,21 @@ import { useCallback, useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import { listen } from "@tauri-apps/api/event";
 import { t } from "./i18n";
+import Create from "./Create";
+import Library from "./Library";
+import { errorText, type Overview, type QueueView, type Take } from "./types";
 import "./App.css";
 
 type AppInfo = { version: string; target: string };
 type Settings = { ace_step_dir: string; workspace_dir: string };
-type EngineError = { code: string; message: string; hint: string };
-type Variant = { index: number; file: string; seed: number; sample_rate?: number };
-type Job = {
-  id: string;
-  caption: string;
-  status: "running" | "done" | "failed" | "cancelled";
-  phase: string;
-  pct: number;
-  detail: string;
-  warnings: string[];
-  error: EngineError | null;
-  out_dir: string;
-  variants: Variant[];
-  effective: { device?: string } | null;
-  elapsed_s: number | null;
-};
 type EngineStatus = {
   state: "stopped" | "starting" | "idle" | "busy" | "crashed";
   pid: number | null;
   models_loaded: boolean;
   model: string | null;
-  job: Job | null;
+  job: { id: string; detail: string; effective: { device?: string } | null } | null;
 };
 type GpuInfo = { name: string; total_gb: number; used_gb: number };
-
-function errorText(e: unknown): string {
-  const err = e as Partial<EngineError>;
-  if (err && typeof err === "object" && err.code) {
-    return [t.errors[err.code] ?? "", err.message].filter(Boolean).join(" ");
-  }
-  return String(e);
-}
 
 export default function App() {
   const [info, setInfo] = useState<AppInfo | null>(null);
@@ -46,31 +25,48 @@ export default function App() {
   const [savedNote, setSavedNote] = useState(false);
   const [status, setStatus] = useState<EngineStatus | null>(null);
   const [gpu, setGpu] = useState<GpuInfo | null | undefined>(undefined);
-  const [caption, setCaption] = useState("");
-  const [duration, setDuration] = useState(30);
-  const [seed, setSeed] = useState(-1);
+  const [overview, setOverview] = useState<Overview | null>(null);
+  const [queue, setQueue] = useState<QueueView>({ jobs: [], current: null });
+  const [takes, setTakes] = useState<Take[]>([]);
   const [actionError, setActionError] = useState("");
-  const [cancelling, setCancelling] = useState(false);
   const [log, setLog] = useState<string[] | null>(null);
+
+  const loadOverview = useCallback(() => {
+    invoke<Overview>("studio_overview").then(setOverview, (e) => setActionError(errorText(e)));
+  }, []);
+  const loadTakes = useCallback(() => {
+    invoke<Take[]>("list_takes").then(setTakes, () => {});
+  }, []);
 
   useEffect(() => {
     invoke<AppInfo>("get_app_info").then(setInfo, () => setBackendDown(true));
     invoke<Settings>("get_settings").then(setSettings, () => {});
     invoke<EngineStatus>("engine_status").then(setStatus, () => {});
+    invoke<QueueView>("queue_status").then(setQueue, () => {});
+    loadOverview();
+    loadTakes();
     const unlisten = listen<EngineStatus>("engine-status", (e) => setStatus(e.payload));
+    const unlistenQueue = listen<QueueView>("queue-status", (e) => setQueue(e.payload));
     const pollGpu = () => invoke<GpuInfo | null>("gpu_info").then(setGpu, () => setGpu(null));
     pollGpu();
     const timer = window.setInterval(pollGpu, 2000);
     return () => {
       unlisten.then((f) => f());
+      unlistenQueue.then((f) => f());
       window.clearInterval(timer);
     };
-  }, []);
+  }, [loadOverview, loadTakes]);
+
+  // A finished job means a new take in the library.
+  const doneCount = queue.jobs.filter((j) => j.status === "done").length;
+  useEffect(loadTakes, [doneCount, loadTakes]);
 
   const saveSettings = async () => {
     setActionError("");
     try {
       await invoke("save_settings", { settings });
+      loadOverview();
+      loadTakes();
       setSavedNote(true);
       window.setTimeout(() => setSavedNote(false), 2000);
     } catch (e) {
@@ -78,22 +74,14 @@ export default function App() {
     }
   };
 
-  const generate = async () => {
-    setActionError("");
-    try {
-      await invoke("generate", { input: { caption, duration, seed } });
-    } catch (e) {
-      setActionError(errorText(e));
-    }
+  const cancelJob = async (id: string) => {
+    await invoke("cancel_job", { id }).catch(() => {});
   };
 
-  const cancel = async () => {
-    setCancelling(true);
-    try {
-      await invoke("cancel");
-    } finally {
-      setCancelling(false);
-    }
+  const trashTake = async (id: string) => {
+    if (!window.confirm(t.trashConfirm)) return;
+    await invoke("trash_take", { id }).catch((e) => setActionError(errorText(e)));
+    loadTakes();
   };
 
   const restart = async () => {
@@ -109,8 +97,8 @@ export default function App() {
     invoke<string[]>("engine_log").then(setLog, () => setLog([]));
   }, []);
 
-  const job = status?.job ?? null;
-  const running = job?.status === "running";
+  const device = status?.job?.effective?.device;
+  const visibleJobs = [...queue.jobs].reverse().slice(0, 20);
   const stateLabel = status
     ? status.state === "idle" && !status.models_loaded
       ? t.engineState.idleEmpty
@@ -149,44 +137,24 @@ export default function App() {
         </div>
       </section>
 
-      <section className="card">
-        <h2>{t.generateTitle}</h2>
-        <label>
-          {t.caption}
-          <textarea
-            rows={3}
-            value={caption}
-            placeholder={t.captionPlaceholder}
-            onChange={(e) => setCaption(e.target.value)}
-          />
-        </label>
-        <div className="row">
-          <label className="small">
-            {t.duration}
-            <input
-              type="number"
-              min={10}
-              max={240}
-              value={duration}
-              onChange={(e) => setDuration(Number(e.target.value))}
-            />
-          </label>
-          <label className="small">
-            {t.seed}
-            <input type="number" value={seed} onChange={(e) => setSeed(Number(e.target.value))} />
-          </label>
-        </div>
-        <div className="row">
-          <button className="primary" onClick={generate} disabled={running}>
-            {t.generate}
-          </button>
-          <button onClick={cancel} disabled={!running || cancelling}>
-            {cancelling ? t.cancelling : t.cancel}
-          </button>
-        </div>
-        <p className="muted small-text">{t.a1Note}</p>
-        {actionError && <p className="error">{actionError}</p>}
-      </section>
+      {overview ? (
+        <Create overview={overview} />
+      ) : (
+        <section className="card">
+          <p className="muted">{t.loading}</p>
+        </section>
+      )}
+      {overview && overview.problems.length > 0 && (
+        <section className="card">
+          <h2>{t.configProblems}</h2>
+          <ul className="warnings">
+            {overview.problems.map((p) => (
+              <li key={p}>{p}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+      {actionError && <p className="error">{actionError}</p>}
 
       <section className="card">
         <h2>{t.statusTitle}</h2>
@@ -211,53 +179,62 @@ export default function App() {
           </div>
         )}
 
-        {job && (
-          <div className="job">
-            <p>
-              <strong>{t.jobStatus[job.status]}</strong> · {t.phase[job.phase] ?? job.phase}
-              {job.detail ? ` (${job.detail})` : ""}
-              {job.elapsed_s != null ? ` · ${t.seconds(job.elapsed_s)}` : ""}
-              {job.effective?.device ? ` · ${t.device} ${job.effective.device}` : ""}
-            </p>
-            {running && (
-              <div className="bar progress">
-                <div style={{ width: `${Math.round(job.pct * 100)}%` }} />
-              </div>
-            )}
-            {job.warnings.length > 0 && (
-              <div className="warnings">
-                <strong>{t.warnings}</strong>
-                <ul>
+        <h3>{t.queueTitle}</h3>
+        {visibleJobs.length === 0 && <p className="muted">{t.queueEmpty}</p>}
+        {visibleJobs.map((job) => {
+          const active = job.status === "running" || job.status === "queued";
+          return (
+            <div className="job" key={job.id}>
+              <p>
+                <strong>{job.title}</strong> · {t.jobStatus[job.status]}
+                {job.status === "queued" && job.queue_position ? ` · ${t.position(job.queue_position)}` : ""}
+                {job.status === "running" ? ` · ${t.phase[job.phase] ?? job.phase}` : ""}
+                {job.status === "running" && status?.job?.id === job.id && status.job.detail ? ` (${status.job.detail})` : ""}
+                {job.quality ? ` · ${t.qualityNames[job.quality] ?? job.quality}` : ""}
+                {job.elapsed_s != null ? ` · ${t.seconds(job.elapsed_s)}` : ""}
+                {job.status === "running" && device ? ` · ${t.device} ${device}` : ""}
+              </p>
+              {job.params && job.status !== "queued" && (
+                <p className="muted small-text">
+                  {t.paramsLine(
+                    String(job.params.dit_model ?? ""),
+                    Number(job.params.inference_steps ?? 0),
+                    Number(job.params.batch_size ?? 1),
+                    job.params.lm_model ? String(job.params.lm_model) : null,
+                    Boolean(job.params.thinking),
+                  )}
+                </p>
+              )}
+              {job.status === "running" && (
+                <div className="bar progress">
+                  <div style={{ width: `${Math.round(job.pct * 100)}%` }} />
+                </div>
+              )}
+              {job.warnings.length > 0 && (
+                <ul className="warnings">
                   {job.warnings.map((w) => (
                     <li key={w}>{w}</li>
                   ))}
                 </ul>
-              </div>
-            )}
-            {job.error && (
-              <div className="error">
-                <strong>{t.error}</strong> {errorText(job.error)}
-                {job.error.hint && (
-                  <pre>
-                    {t.hint}: {job.error.hint}
-                  </pre>
-                )}
-              </div>
-            )}
-            {job.status === "done" && (
-              <div>
-                <strong>{t.output}</strong> <code>{job.out_dir}</code>
-                <ul>
-                  {job.variants.map((v) => (
-                    <li key={v.index}>
-                      <code>{v.file}</code> · seed {v.seed}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        )}
+              )}
+              {job.error && (
+                <div className="error">
+                  <strong>{t.error}</strong> {errorText(job.error)}
+                  {job.error.hint && (
+                    <pre>
+                      {t.hint}: {job.error.hint}
+                    </pre>
+                  )}
+                </div>
+              )}
+              {active && (
+                <button onClick={() => cancelJob(job.id)} disabled={job.cancelling}>
+                  {job.cancelling ? t.cancelling : t.cancel}
+                </button>
+              )}
+            </div>
+          );
+        })}
 
         <div className="row">
           <button onClick={restart}>{t.restartEngine}</button>
@@ -268,6 +245,8 @@ export default function App() {
           <pre className="log">{log && log.length ? log.join("\n") : t.logEmpty}</pre>
         </details>
       </section>
+
+      <Library takes={takes} onTrash={trashTake} />
 
       <footer className="muted small-text">
         {t.platform} {info ? info.target : "—"}
