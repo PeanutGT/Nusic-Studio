@@ -397,8 +397,8 @@ pub fn build_spec(cfg: &Value, cat: &Catalog, input: &PlanInput) -> Result<Value
     let mut rng = PyRandom::from_str_seed(&format!("{style_id}|{description}|{seed_str}"));
     let style_bpm = style.get("bpm").filter(|v| truthy(v));
     let mut bpm = input.bpm.clone().filter(|v| !v.is_null());
-    if bpm.is_none() {
-        if let Some(sb) = style_bpm {
+    if bpm.is_none()
+        && let Some(sb) = style_bpm {
             let range = match sb {
                 Value::Array(a) if a.len() == 2 => Some((num(a.first()).unwrap_or(0.0), num(a.get(1)).unwrap_or(0.0))),
                 Value::Number(n) => n.as_f64().map(|f| (f, f)),
@@ -413,18 +413,16 @@ pub fn build_spec(cfg: &Value, cat: &Catalog, input: &PlanInput) -> Result<Value
                 bpm = Some(json!(b));
             }
         }
-    }
     let mut key = input.key.clone().map(Value::String);
-    if key.is_none() {
-        if let Some(keys) = style.get("keys").and_then(Value::as_array).filter(|k| !k.is_empty()) {
+    if key.is_none()
+        && let Some(keys) = style.get("keys").and_then(Value::as_array).filter(|k| !k.is_empty()) {
             key = rng.choice(keys).cloned();
         }
-    }
     let default_wf = py_str(&cfg["workflow"]["default"]);
     let workflow = input.workflow.clone().filter(|w| !w.is_empty()).unwrap_or(default_wf);
     let wf_defaults = cat.workflows.get(&workflow).and_then(|w| w.get("defaults")).cloned().unwrap_or_else(|| json!({}));
     let pick = |own: Option<Value>, key: &str| -> Value {
-        own.filter(|v| truthy(v)).or_else(|| wf_defaults.get(key).cloned()).unwrap_or(Value::Null)
+        own.filter(truthy).or_else(|| wf_defaults.get(key).cloned()).unwrap_or(Value::Null)
     };
     let quality = pick(input.quality.clone().map(Value::String), "quality");
     let variants = pick(input.variants.clone(), "variants");
@@ -438,11 +436,10 @@ pub fn build_spec(cfg: &Value, cat: &Catalog, input: &PlanInput) -> Result<Value
             .or_else(|| dur_cfg.get("default").cloned())
             .unwrap_or_else(|| cfg["generation"].get("duration").cloned().unwrap_or(json!(60))),
     };
-    if let Some(max) = dur_cfg.get("max").filter(|v| truthy(v)) {
-        if num(Some(&duration)).unwrap_or(0.0) > num(Some(max)).unwrap_or(f64::MAX) {
+    if let Some(max) = dur_cfg.get("max").filter(|v| truthy(v))
+        && num(Some(&duration)).unwrap_or(0.0) > num(Some(max)).unwrap_or(f64::MAX) {
             warnings.push(format!("duration {}s is above this style's usual max ({}s)", py_str(&duration), py_str(max)));
         }
-    }
     let title = match input.title.clone().filter(|t| !t.is_empty()) {
         Some(t) => json!(t),
         None if !description.is_empty() => json!(description.chars().take(40).collect::<String>()),

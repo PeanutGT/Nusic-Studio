@@ -160,8 +160,8 @@ pub fn resolve_params(cfg: &Value, quality: Option<&str>, overrides: Option<&Obj
     params.insert("lm_backend".into(), cfg["hardware"].get("lm_backend").cloned().unwrap_or_else(|| json!("pt")));
 
     let ov = |k: &str| overrides.and_then(|o| o.get(k));
-    if let Some(max_dur) = tier_cfg.get("max_duration").filter(|v| truthy(v)) {
-        if num(params.get("duration")).unwrap_or(0.0) > num(Some(max_dur)).unwrap_or(f64::MAX) {
+    if let Some(max_dur) = tier_cfg.get("max_duration").filter(|v| truthy(v))
+        && num(params.get("duration")).unwrap_or(0.0) > num(Some(max_dur)).unwrap_or(f64::MAX) {
             warnings.push(format!(
                 "duration {}s exceeds the {tier} tier cap ({}s); clamped. Raise hardware.tiers.{tier}.max_duration if your card copes.",
                 py_str(&params["duration"]),
@@ -169,9 +169,8 @@ pub fn resolve_params(cfg: &Value, quality: Option<&str>, overrides: Option<&Obj
             ));
             params.insert("duration".into(), max_dur.clone());
         }
-    }
-    if let Some(max_batch) = tier_cfg.get("max_batch").filter(|v| truthy(v)) {
-        if num(params.get("batch_size")).unwrap_or(1.0) > num(Some(max_batch)).unwrap_or(f64::MAX) {
+    if let Some(max_batch) = tier_cfg.get("max_batch").filter(|v| truthy(v))
+        && num(params.get("batch_size")).unwrap_or(1.0) > num(Some(max_batch)).unwrap_or(f64::MAX) {
             if opt_truthy(ov("batch_size")) {
                 warnings.push(format!(
                     "you asked for {} variants but the {tier} tier allows {}; using {}.",
@@ -182,7 +181,6 @@ pub fn resolve_params(cfg: &Value, quality: Option<&str>, overrides: Option<&Obj
             }
             params.insert("batch_size".into(), max_batch.clone());
         }
-    }
     if opt_truthy(params.get("thinking")) && !opt_truthy(params.get("lm_model")) {
         if opt_truthy(ov("thinking")) {
             warnings.push(format!("the {tier} tier has no language model, so 'thinking' is off."));
@@ -364,20 +362,18 @@ pub fn validate_config(cfg: &Value, knobs: &Value, workflow_ids: &[String]) -> V
     layers.extend(presets.iter().map(|(q, p)| (format!("quality.presets.{q}"), p.clone())));
     for (wher, layer) in &layers {
         for (key, value) in layer.as_object().into_iter().flatten() {
-            if let (Some(knob), false) = (engine_cat.get(key), value.is_null()) {
-                if let (_, Some(err)) = check_knob(knob, value) {
+            if let (Some(knob), false) = (engine_cat.get(key), value.is_null())
+                && let (_, Some(err)) = check_knob(knob, value) {
                     problems.push(format!("{wher}.{err}"));
                 }
-            }
         }
     }
     for (t, tc) in &tiers {
         for (key, value) in tc.as_object().into_iter().flatten() {
-            if let (Some(knob), false) = (tier_cat.get(key), value.is_null()) {
-                if let (_, Some(err)) = check_knob(knob, value) {
+            if let (Some(knob), false) = (tier_cat.get(key), value.is_null())
+                && let (_, Some(err)) = check_knob(knob, value) {
                     problems.push(format!("hardware.tiers.{t}.{err}"));
                 }
-            }
         }
     }
     for (name, preset) in &presets {

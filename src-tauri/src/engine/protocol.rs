@@ -3,11 +3,11 @@
 //! worker prints goes to stderr. See the docstring at the top of ace_worker.py.
 
 use serde::{Deserialize, Serialize};
-use serde_json::{Value, json};
-use std::path::Path;
+use serde_json::Value;
 
 #[derive(Debug, Clone, PartialEq, Deserialize)]
 #[serde(tag = "event", rename_all = "snake_case")]
+#[allow(clippy::large_enum_variant)] // parsed once per line and consumed at once
 pub enum Event {
     Ready {
         #[serde(default)]
@@ -41,6 +41,10 @@ pub enum Event {
         #[serde(default)]
         effective: Value,
         #[serde(default)]
+        lm_metadata: Value,
+        #[serde(default)]
+        time_costs: Value,
+        #[serde(default)]
         warnings: Vec<String>,
         #[serde(default)]
         elapsed_s: Option<f64>,
@@ -72,57 +76,6 @@ pub fn parse_line(line: &str) -> Option<Event> {
         return None;
     }
     serde_json::from_str(line).ok()
-}
-
-/// What the user asks for in A1's minimal screen.
-#[derive(Debug, Clone, Deserialize, Serialize)]
-pub struct GenerateInput {
-    pub caption: String,
-    pub duration: f64,
-    /// Negative = random.
-    #[serde(default = "random_seed")]
-    pub seed: i64,
-}
-
-fn random_seed() -> i64 {
-    -1
-}
-
-/// Build a `generate` request with the v3.7 "low" tier defaults
-/// (turbo, 8 steps, no LM, no quantisation, both offload flags), one variant.
-/// The worker's own VRAM guard still adapts it to the card. A2 replaces these
-/// fixed values with the ported config / quality presets.
-pub fn generate_request(job: &str, input: &GenerateInput, seed: i64, ace_dir: &Path, out_dir: &Path) -> Value {
-    json!({
-        "op": "generate",
-        "job": job,
-        "ace_step_dir": ace_dir.to_string_lossy(),
-        "checkpoints_dir": ace_dir.join("checkpoints").to_string_lossy(),
-        "params": {
-            "dit_model": "acestep-v15-turbo",
-            "lm_model": null,
-            "thinking": false,
-            "inference_steps": 8,
-            "guidance_scale": 7.0,
-            "shift": 3.0,
-            "duration": input.duration,
-            "batch_size": 1,
-            "quantization": null,
-            "offload_to_cpu": true,
-            "offload_dit_to_cpu": true,
-            "audio_format": "flac",
-            "instrumental": true
-        },
-        "tier_dit_model": "acestep-v15-turbo",
-        "explicit_keys": [],
-        "vram_guard": true,
-        "caption": input.caption,
-        "instrumental": true,
-        "lyrics": "",
-        "seeds": [seed],
-        "out_dir": out_dir.to_string_lossy(),
-        "warnings": []
-    })
 }
 
 #[cfg(test)]
@@ -171,7 +124,8 @@ mod tests {
         )
         .unwrap();
         match ev {
-            Event::Result { variants, warnings, elapsed_s, effective } => {
+            Event::Result { variants, warnings, elapsed_s, effective, lm_metadata, .. } => {
+                assert_eq!(lm_metadata, Value::Null);
                 assert_eq!(variants, vec![Variant { index: 1, file: "v1.flac".into(), seed: 42, sample_rate: Some(48000) }]);
                 assert_eq!(warnings, vec!["w".to_string()]);
                 assert_eq!(elapsed_s, Some(17.2));
@@ -187,21 +141,5 @@ mod tests {
         assert_eq!(parse_line("Loading checkpoint shards: 100%"), None);
         assert_eq!(parse_line("{not json"), None);
         assert_eq!(parse_line(""), None);
-    }
-
-    #[test]
-    fn request_carries_caption_seed_and_low_tier_defaults() {
-        let input = GenerateInput { caption: "calm piano".into(), duration: 30.0, seed: 7 };
-        let req = generate_request("j1", &input, 7, Path::new("/ace"), Path::new("/ws/output/t1"));
-        assert_eq!(req["op"], "generate");
-        assert_eq!(req["job"], "j1");
-        assert_eq!(req["caption"], "calm piano");
-        assert_eq!(req["seeds"], json!([7]));
-        assert_eq!(req["params"]["duration"], 30.0);
-        assert_eq!(req["params"]["batch_size"], 1);
-        assert_eq!(req["params"]["inference_steps"], 8);
-        assert_eq!(req["params"]["offload_dit_to_cpu"], true);
-        assert_eq!(req["params"]["quantization"], Value::Null);
-        assert_eq!(req["checkpoints_dir"], Path::new("/ace").join("checkpoints").to_string_lossy().as_ref());
     }
 }
