@@ -23,35 +23,139 @@ body {
 }
 
 .shell {
-  max-width: 640px;
-  margin: 15vh auto 0;
-  padding: 0 24px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
 h1 {
   margin: 0;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   letter-spacing: -0.02em;
 }
 
-.tagline {
-  margin: 4px 0 24px;
+h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.tagline,
+.muted {
   color: var(--muted);
 }
 
-.notice {
-  border-left: 3px solid var(--accent);
-  padding-left: 12px;
+.tagline {
+  margin: 4px 0 16px;
+}
+
+.small-text {
+  font-size: 0.85rem;
+}
+
+.card {
+  border: 1px solid color-mix(in srgb, var(--fg) 12%, transparent);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+label.small {
+  flex: 1;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .info {
   display: grid;
   grid-template-columns: max-content 1fr;
   gap: 4px 16px;
+  margin: 0 0 8px;
   color: var(--muted);
 }
 
 .info dd {
   margin: 0;
   color: var(--fg);
+}
+
+.bar {
+  height: 6px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--fg) 12%, transparent);
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.bar > div {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+.job {
+  margin: 12px 0;
+}
+
+.warnings ul,
+.job ul {
+  margin: 4px 0 8px;
+  padding-left: 20px;
+}
+
+.error {
+  color: #c0392b;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.8rem;
+}
+
+.log {
+  max-height: 240px;
+  overflow: auto;
+  background: color-mix(in srgb, var(--fg) 6%, transparent);
+  padding: 8px;
+  border-radius: 6px;
 }

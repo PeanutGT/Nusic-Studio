@@ -44,6 +44,9 @@
         "installMode": "currentUser"
       }
     },
-    "shortDescription": "Local AI music studio"
+    "shortDescription": "Local AI music studio",
+    "resources": [
+      "resources/ace_worker.py"
+    ]
   }
 }
