@@ -23,13 +23,21 @@ identical files. `manifest.json` records the skill version and source commit.
 | `plan/keys.json` | `random.Random(s).choice` | Key picks for many seed strings. Python seeds MT19937 from SHA-512 of the string, so Rust must reproduce that to match |
 | `audio/*.flac` | – | Synthetic test signals, 16-bit / 48 kHz / stereo |
 | `qc/cases.json` | `postprocess.*` | Per signal: `inspect_audio` issues, `analyze_array` report, `qc` notes, `brightness`, `seam_metrics`, and the `op_loudnorm` gain |
+| `qc/ops.json` | `postprocess.op_*` | `trim_silence`, `fit`, `fade`, `loop` on the signals: length, checksums, sample probes, notes and warnings |
+| `qc/r128.json` | ffmpeg `ebur128` filter | The signals through a standard EBU R128 meter: integrated loudness, loudness range, true peak (0.1 precision) |
 
 Expectations are computed on the decoded FLAC, not the original floats, so a
 decoder in Rust sees exactly the same samples.
 
-## Tolerances (proposed)
+## Tolerances
 
 - Planning (`plan/*`): exact match, including warning text.
 - Sample-domain numbers (peak, DC, silence, seam, brightness): within rounding of the stored precision.
-- `lufs`, `true_peak_db`, `lra` and the loudnorm gain come from ffmpeg's EBU R128 meter: ±0.1 LU / dB.
+- Post-processing ops (`qc/ops.json`): exact length, samples within 2e-6, notes and warnings exact.
 - QC issue codes and their order: exact. Times (`at`): ±0.01 s.
+- Loudness: v3.7 read it from ffmpeg's `loudnorm` filter, whose analysis runs on its own
+  192 kHz, look-ahead-buffered copy and reads 0.1-0.4 LU off a standard meter on these signals
+  (its LRA much more). The app meters to the standard instead: `lufs` and `true_peak_db` within
+  ±0.11 of `qc/r128.json`, `lra` within ±0.6 (reported only, no check uses it), and every value
+  within 0.5 of v3.7's reading. The loudness gain equals target − standard reading (capped by
+  the true peak) within ±0.11 dB.

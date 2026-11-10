@@ -1,0 +1,808 @@
+{
+  "cases": [
+    {
+      "audio": "audio/clean.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 219315.7787,
+        "frames": 959999,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.047607,
+            0.047607
+          ],
+          "1": [
+            0.070374,
+            0.070374
+          ],
+          "319999": [
+            -0.24588,
+            -0.24588
+          ],
+          "479999": [
+            0.0,
+            0.0
+          ],
+          "48000": [
+            0.047607,
+            0.047607
+          ],
+          "959997": [
+            0.0,
+            0.0
+          ],
+          "959998": [
+            0.0,
+            0.0
+          ],
+          "96007": [
+            0.041107,
+            0.041107
+          ]
+        },
+        "sum": 12.6419,
+        "warnings": []
+      },
+      "id": "trim_silence:clean:{}:{}",
+      "op": "trim_silence",
+      "params": {}
+    },
+    {
+      "audio": "audio/tail_hiss.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 182825.999,
+        "frames": 959999,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.047607,
+            0.047607
+          ],
+          "1": [
+            0.070374,
+            0.070374
+          ],
+          "319999": [
+            -0.24588,
+            -0.24588
+          ],
+          "479999": [
+            0.0,
+            0.0
+          ],
+          "48000": [
+            0.047607,
+            0.047607
+          ],
+          "959997": [
+            -0.00235,
+            -0.00235
+          ],
+          "959998": [
+            -0.001068,
+            -0.001068
+          ],
+          "96007": [
+            0.041107,
+            0.041107
+          ]
+        },
+        "sum": -0.1891,
+        "warnings": []
+      },
+      "id": "trim_silence:tail_hiss:{}:{}",
+      "op": "trim_silence",
+      "params": {}
+    },
+    {
+      "audio": "audio/tail_hiss.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 182807.2412,
+        "frames": 816000,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.047607,
+            0.047607
+          ],
+          "272000": [
+            -0.065887,
+            -0.065887
+          ],
+          "408000": [
+            0.0,
+            0.0
+          ],
+          "48000": [
+            0.0,
+            0.0
+          ],
+          "815998": [
+            0.0,
+            0.0
+          ],
+          "815999": [
+            0.0,
+            0.0
+          ],
+          "96007": [
+            -0.006378,
+            -0.006378
+          ]
+        },
+        "sum": 0.0,
+        "warnings": []
+      },
+      "id": "trim_silence:tail_hiss:{\"keep_head\": 0.5, \"keep_tail\": 1.0, \"threshold_db\": -40}:{}",
+      "op": "trim_silence",
+      "params": {
+        "keep_head": 0.5,
+        "keep_tail": 1.0,
+        "threshold_db": -40
+      }
+    },
+    {
+      "audio": "audio/near_silent.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 17.9012,
+        "frames": 960000,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.0,
+            0.0
+          ],
+          "320000": [
+            -3.1e-05,
+            -3.1e-05
+          ],
+          "48000": [
+            0.0,
+            0.0
+          ],
+          "480000": [
+            0.0,
+            0.0
+          ],
+          "959998": [
+            0.0,
+            0.0
+          ],
+          "959999": [
+            0.0,
+            0.0
+          ],
+          "96007": [
+            0.0,
+            0.0
+          ]
+        },
+        "sum": 0.0005,
+        "warnings": [
+          "trim_silence: file is silent, left unchanged"
+        ]
+      },
+      "id": "trim_silence:near_silent:{\"threshold_db\": -30}:{}",
+      "op": "trim_silence",
+      "params": {
+        "threshold_db": -30
+      }
+    },
+    {
+      "audio": "audio/clean.flac",
+      "ctx": {
+        "duration": 12
+      },
+      "expected": {
+        "abs_sum": 137105.4309,
+        "frames": 576000,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.047607,
+            0.047607
+          ],
+          "192000": [
+            0.0,
+            0.0
+          ],
+          "288000": [
+            0.0,
+            0.0
+          ],
+          "48000": [
+            0.0,
+            0.0
+          ],
+          "575998": [
+            -0.070374,
+            -0.070374
+          ],
+          "575999": [
+            -0.047607,
+            -0.047607
+          ],
+          "96007": [
+            -0.006378,
+            -0.006378
+          ]
+        },
+        "sum": 0.0,
+        "warnings": []
+      },
+      "id": "fit:clean:{\"duration\": \"spec\"}:{\"duration\": 12}",
+      "op": "fit",
+      "params": {
+        "duration": "spec"
+      }
+    },
+    {
+      "audio": "audio/clean.flac",
+      "ctx": {
+        "bpm": 110
+      },
+      "expected": {
+        "abs_sum": 129024.2122,
+        "frames": 523635,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.047607,
+            0.047607
+          ],
+          "174545": [
+            0.041504,
+            0.041504
+          ],
+          "261817": [
+            0.040344,
+            0.040344
+          ],
+          "48000": [
+            0.0,
+            0.0
+          ],
+          "523633": [
+            0.021759,
+            0.021759
+          ],
+          "523634": [
+            0.045471,
+            0.045471
+          ],
+          "96007": [
+            -0.006378,
+            -0.006378
+          ]
+        },
+        "sum": -2.1248,
+        "warnings": []
+      },
+      "id": "fit:clean:{\"duration\": 12.3, \"snap\": \"bars\"}:{\"bpm\": 110}",
+      "op": "fit",
+      "params": {
+        "duration": 12.3,
+        "snap": "bars"
+      }
+    },
+    {
+      "audio": "audio/clean.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 141440.3723,
+        "frames": 590400,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.047607,
+            0.047607
+          ],
+          "196800": [
+            0.0,
+            0.0
+          ],
+          "295200": [
+            0.0,
+            0.0
+          ],
+          "48000": [
+            0.0,
+            0.0
+          ],
+          "590398": [
+            -0.075958,
+            -0.075958
+          ],
+          "590399": [
+            -0.050415,
+            -0.050415
+          ],
+          "96007": [
+            -0.006378,
+            -0.006378
+          ]
+        },
+        "sum": -6.7443,
+        "warnings": [
+          "fit: snap=bars needs a bpm, cutting at the exact duration instead"
+        ]
+      },
+      "id": "fit:clean:{\"duration\": 12.3, \"snap\": \"bars\"}:{}",
+      "op": "fit",
+      "params": {
+        "duration": 12.3,
+        "snap": "bars"
+      }
+    },
+    {
+      "audio": "audio/clean.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 219315.7787,
+        "frames": 960000,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.047607,
+            0.047607
+          ],
+          "320000": [
+            -0.24588,
+            -0.24588
+          ],
+          "48000": [
+            0.0,
+            0.0
+          ],
+          "480000": [
+            0.0,
+            0.0
+          ],
+          "959998": [
+            0.0,
+            0.0
+          ],
+          "959999": [
+            0.0,
+            0.0
+          ],
+          "96007": [
+            -0.006378,
+            -0.006378
+          ]
+        },
+        "sum": 12.6419,
+        "warnings": [
+          "fit: track is 20.0s, shorter than 30.0s; not extended"
+        ]
+      },
+      "id": "fit:clean:{\"duration\": 30}:{}",
+      "op": "fit",
+      "params": {
+        "duration": 30
+      }
+    },
+    {
+      "audio": "audio/clean.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 219315.7787,
+        "frames": 960000,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.047607,
+            0.047607
+          ],
+          "320000": [
+            -0.24588,
+            -0.24588
+          ],
+          "48000": [
+            0.0,
+            0.0
+          ],
+          "480000": [
+            0.0,
+            0.0
+          ],
+          "959998": [
+            0.0,
+            0.0
+          ],
+          "959999": [
+            0.0,
+            0.0
+          ],
+          "96007": [
+            -0.006378,
+            -0.006378
+          ]
+        },
+        "sum": 12.6419,
+        "warnings": [
+          "fit: no target duration known, skipped"
+        ]
+      },
+      "id": "fit:clean:{\"duration\": \"spec\"}:{}",
+      "op": "fit",
+      "params": {
+        "duration": "spec"
+      }
+    },
+    {
+      "audio": "audio/clean.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 210408.6537,
+        "frames": 960000,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            2e-06,
+            2e-06
+          ],
+          "320000": [
+            -0.24588,
+            -0.24588
+          ],
+          "48000": [
+            0.0,
+            0.0
+          ],
+          "480000": [
+            0.0,
+            0.0
+          ],
+          "959998": [
+            0.0,
+            0.0
+          ],
+          "959999": [
+            0.0,
+            0.0
+          ],
+          "96007": [
+            -0.006378,
+            -0.006378
+          ]
+        },
+        "sum": 0.0008,
+        "warnings": []
+      },
+      "id": "fade:clean:{\"in\": 1.0, \"out\": 2.5}:{}",
+      "op": "fade",
+      "params": {
+        "in": 1.0,
+        "out": 2.5
+      }
+    },
+    {
+      "audio": "audio/drums.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 87779.4677,
+        "frames": 960000,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.050293,
+            0.050293
+          ],
+          "1": [
+            -0.028992,
+            -0.028992
+          ],
+          "320000": [
+            -0.106482,
+            -0.106482
+          ],
+          "48000": [
+            0.046487,
+            0.046487
+          ],
+          "480000": [
+            -0.375995,
+            -0.375995
+          ],
+          "959998": [
+            0.0,
+            0.0
+          ],
+          "959999": [
+            0.0,
+            0.0
+          ],
+          "96007": [
+            0.56751,
+            0.56751
+          ]
+        },
+        "sum": -16.4587,
+        "warnings": []
+      },
+      "id": "fade:drums:{\"out\": 40}:{}",
+      "op": "fade",
+      "params": {
+        "out": 40
+      }
+    },
+    {
+      "audio": "audio/periodic_loop.flac",
+      "ctx": {
+        "bpm": 110
+      },
+      "expected": {
+        "abs_sum": 240020.6856,
+        "frames": 628362,
+        "loop": true,
+        "notes": [
+          "loop length snapped to 6 bars",
+          "loop crossfade 2.0s, passage similarity 1.00"
+        ],
+        "samples": {
+          "0": [
+            -0.01413,
+            -0.01413
+          ],
+          "1": [
+            -0.005493,
+            -0.005493
+          ],
+          "209454": [
+            -0.0047,
+            -0.0047
+          ],
+          "314181": [
+            -0.00708,
+            -0.00708
+          ],
+          "48000": [
+            -0.007068,
+            -0.007068
+          ],
+          "628360": [
+            -0.031372,
+            -0.031372
+          ],
+          "628361": [
+            -0.022766,
+            -0.022766
+          ],
+          "96007": [
+            0.060059,
+            0.060059
+          ]
+        },
+        "sum": 0.0,
+        "warnings": []
+      },
+      "id": "loop:periodic_loop:{\"crossfade\": 2.0, \"snap_bars\": true}:{\"bpm\": 110}",
+      "op": "loop",
+      "params": {
+        "crossfade": 2.0,
+        "snap_bars": true
+      }
+    },
+    {
+      "audio": "audio/clean.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 207133.7647,
+        "frames": 888000,
+        "loop": true,
+        "notes": [
+          "loop: no bpm known, length not snapped to bars",
+          "loop crossfade 1.5s, passage similarity 0.80"
+        ],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.0383,
+            0.0383
+          ],
+          "296000": [
+            -0.207855,
+            -0.207855
+          ],
+          "444000": [
+            0.0,
+            0.0
+          ],
+          "48000": [
+            0.0,
+            0.0
+          ],
+          "887998": [
+            -0.057953,
+            -0.057953
+          ],
+          "887999": [
+            -0.0383,
+            -0.0383
+          ],
+          "96007": [
+            -0.006378,
+            -0.006378
+          ]
+        },
+        "sum": -0.0006,
+        "warnings": []
+      },
+      "id": "loop:clean:{\"crossfade\": 1.5}:{}",
+      "op": "loop",
+      "params": {
+        "crossfade": 1.5
+      }
+    },
+    {
+      "audio": "audio/drums.flac",
+      "ctx": {
+        "beats_per_bar": 3,
+        "bpm": 120
+      },
+      "expected": {
+        "abs_sum": 120466.5504,
+        "frames": 864000,
+        "loop": true,
+        "notes": [
+          "loop length snapped to 12 bars",
+          "loop crossfade 2.0s, passage similarity 0.68"
+        ],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.023803,
+            0.023803
+          ],
+          "288000": [
+            -0.392883,
+            -0.392883
+          ],
+          "432000": [
+            -0.372955,
+            -0.372955
+          ],
+          "48000": [
+            0.026365,
+            0.026365
+          ],
+          "863998": [
+            -0.035187,
+            -0.035187
+          ],
+          "863999": [
+            -0.023804,
+            -0.023804
+          ],
+          "96007": [
+            0.574585,
+            0.574585
+          ]
+        },
+        "sum": 29.2299,
+        "warnings": []
+      },
+      "id": "loop:drums:{\"crossfade\": 2.0, \"snap_bars\": true}:{\"beats_per_bar\": 3, \"bpm\": 120}",
+      "op": "loop",
+      "params": {
+        "crossfade": 2.0,
+        "snap_bars": true
+      }
+    },
+    {
+      "audio": "audio/cut_off.flac",
+      "ctx": {},
+      "expected": {
+        "abs_sum": 114254.5258,
+        "frames": 480000,
+        "loop": false,
+        "notes": [],
+        "samples": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.047607,
+            0.047607
+          ],
+          "160000": [
+            0.065887,
+            0.065887
+          ],
+          "240000": [
+            0.0,
+            0.0
+          ],
+          "479998": [
+            -0.070374,
+            -0.070374
+          ],
+          "479999": [
+            -0.047607,
+            -0.047607
+          ],
+          "48000": [
+            0.0,
+            0.0
+          ],
+          "96007": [
+            -0.006378,
+            -0.006378
+          ]
+        },
+        "sum": 0.0,
+        "warnings": [
+          "loop: track too short for that crossfade; skipped"
+        ]
+      },
+      "id": "loop:cut_off:{\"crossfade\": 4.0}:{}",
+      "op": "loop",
+      "params": {
+        "crossfade": 4.0
+      }
+    }
+  ],
+  "functions": [
+    "postprocess.op_trim_silence",
+    "postprocess.op_fit",
+    "postprocess.op_fade",
+    "postprocess.op_loop"
+  ],
+  "note": "Computed on the decoded FLAC. sum/abs_sum over every sample of both channels.",
+  "sample_rate": 48000
+}
