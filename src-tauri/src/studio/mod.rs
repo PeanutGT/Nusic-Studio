@@ -1,0 +1,9 @@
+//! Everything that is not GPU work, ported from the music-studio skill v3.7:
+//! layered config and the knob catalog, style / mood / workflow / lexicon libraries,
+//! planning and captions, the job queue and the take library.
+
+pub mod catalog;
+pub mod config;
+pub mod json;
+pub mod plan;
+pub mod pyrandom;

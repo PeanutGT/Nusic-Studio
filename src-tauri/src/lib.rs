@@ -1,3 +1,4 @@
+pub mod studio;
 pub mod engine;
 pub mod settings;
 
