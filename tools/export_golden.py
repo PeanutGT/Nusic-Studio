@@ -15,12 +15,15 @@ What it writes (see golden/README.md for the file formats):
     audio/*.flac         short synthetic test signals (16-bit, 48 kHz, stereo)
     qc/cases.json        per signal: inspect_audio issues, analyze_array report, qc notes,
                          seam metrics, brightness, loudnorm gain
+    qc/r128.json         the signals through ffmpeg's standard EBU R128 meter (loudness reference)
+    qc/ops.json          trim_silence / fit / fade / loop on the signals -> length, checksums, samples
 """
 from __future__ import annotations
 
 import argparse
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -205,6 +208,75 @@ def qc_golden(pp, cfg: dict, out: Path) -> None:
         "cases": rows})
 
 
+OP_CASES = [
+    # (signal, op, params, ctx) - ctx carries what the take's spec would give (bpm, duration)
+    ("clean", "trim_silence", {}, {}),
+    ("tail_hiss", "trim_silence", {}, {}),
+    ("tail_hiss", "trim_silence", {"threshold_db": -40, "keep_head": 0.5, "keep_tail": 1.0}, {}),
+    ("near_silent", "trim_silence", {"threshold_db": -30}, {}),
+    ("clean", "fit", {"duration": "spec"}, {"duration": 12}),
+    ("clean", "fit", {"duration": 12.3, "snap": "bars"}, {"bpm": 110}),
+    ("clean", "fit", {"duration": 12.3, "snap": "bars"}, {}),
+    ("clean", "fit", {"duration": 30}, {}),
+    ("clean", "fit", {"duration": "spec"}, {}),
+    ("clean", "fade", {"in": 1.0, "out": 2.5}, {}),
+    ("drums", "fade", {"out": 40}, {}),
+    ("periodic_loop", "loop", {"crossfade": 2.0, "snap_bars": True}, {"bpm": 110}),
+    ("clean", "loop", {"crossfade": 1.5}, {}),
+    ("drums", "loop", {"crossfade": 2.0, "snap_bars": True}, {"bpm": 120, "beats_per_bar": 3}),
+    ("cut_off", "loop", {"crossfade": 4.0}, {}),
+]
+
+
+def ops_golden(pp, cfg: dict, out: Path) -> None:
+    """Each post-processing op on a decoded test signal -> length, checksums and a few samples."""
+    rows = []
+    for name, op, params, extra in OP_CASES:
+        y = pp.decode(out / "audio" / f"{name}.flac", cfg, SR)
+        ctx = {"cfg": cfg, "bpm": extra.get("bpm"), "duration": extra.get("duration"),
+               "beats_per_bar": extra.get("beats_per_bar", 4), "warnings": [], "notes": [], "loop": False}
+        z = np.asarray(pp.OPS[op](y, SR, params, ctx), dtype=np.float64)
+        probe = sorted({0, 1, len(z) // 3, len(z) // 2, len(z) - 2, len(z) - 1, SR, SR * 2 + 7} & set(range(len(z))))
+        rows.append({
+            "id": f"{op}:{name}:{json.dumps(params, sort_keys=True)}:{json.dumps(extra, sort_keys=True)}",
+            "audio": f"audio/{name}.flac", "op": op, "params": params, "ctx": extra,
+            "expected": {
+                "frames": int(len(z)),
+                "sum": round(float(z.sum()), 4),
+                "abs_sum": round(float(np.abs(z).sum()), 4),
+                "samples": {str(i): [round(float(v), 6) for v in z[i]] for i in probe},
+                "notes": ctx["notes"], "warnings": ctx["warnings"], "loop": ctx["loop"],
+            },
+        })
+    write(out / "qc" / "ops.json", {
+        "sample_rate": SR,
+        "functions": ["postprocess.op_trim_silence", "postprocess.op_fit", "postprocess.op_fade", "postprocess.op_loop"],
+        "note": "Computed on the decoded FLAC. sum/abs_sum over every sample of both channels.",
+        "cases": rows})
+
+
+def r128_golden(out: Path) -> None:
+    """The same signals through ffmpeg's standard EBU R128 meter (the `ebur128` filter).
+
+    v3.7 measured with the `loudnorm` filter, whose analysis runs on its own 192 kHz,
+    look-ahead-buffered copy of the signal and reads 0.1-0.4 LU off a standard meter on these
+    signals (and its LRA much more). The app meters to the standard, so this is its reference.
+    """
+    rows = []
+    for flac in sorted((out / "audio").glob("*.flac")):
+        proc = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(flac), "-af", "ebur128=peak=true",
+                               "-f", "null", "-"], capture_output=True, text=True, errors="replace")
+        summary = proc.stderr[proc.stderr.rfind("Summary:"):]
+        grab = lambda label: re.search(label + r":\s+(-?[\d.]+|-inf)", summary)  # noqa: E731
+        val = lambda m: None if m is None or m.group(1) == "-inf" else float(m.group(1))  # noqa: E731
+        rows.append({"id": flac.stem, "audio": f"audio/{flac.name}",
+                     "expected": {"lufs": val(grab("I")), "lra": val(grab("LRA")), "true_peak_db": val(grab("Peak"))}})
+    write(out / "qc" / "r128.json", {
+        "meter": "ffmpeg ebur128=peak=true (summary, 0.1 precision)",
+        "note": "Reference for integrated loudness, loudness range and true peak; see r128_golden.",
+        "cases": rows})
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--skill", required=True, type=Path, help="path to NutsSkills/skills/music-studio")
@@ -227,6 +299,8 @@ def main(argv=None) -> int:
         plan_golden(ms, a.out)
         cfg, _ = ms.load_config()
         qc_golden(pp, cfg, a.out)
+        ops_golden(pp, cfg, a.out)
+        r128_golden(a.out)
         write(a.out / "manifest.json", {
             "source": "PeanutGT/NutsSkills skills/music-studio",
             "skill_version": version,

@@ -142,10 +142,15 @@ pub struct Outcome {
     pub elapsed_s: f64,
 }
 
-/// Write `meta.json`; from now on the take is in the library. Returns the meta.
+/// Check every variant's audio, then write `meta.json`; from now on the take is in the library.
+/// Returns the meta.
 pub fn finish(p: &Prepared, job: &str, out: &Outcome) -> std::io::Result<Value> {
     let mut warnings = p.warnings.clone();
     warnings.extend(out.warnings.iter().filter(|w| !p.warnings.contains(w)).cloned());
+    // automatic check of every variant (A3); a failure here never loses the take
+    let mut variants = out.variants.clone();
+    let loopable = p.spec.get("loopable").is_some_and(truthy);
+    warnings.extend(super::post::ops::check_variants(&p.out_dir, &mut variants, loopable));
     let meta = json!({
         "id": p.take_id,
         "title": p.title,
@@ -161,7 +166,7 @@ pub fn finish(p: &Prepared, job: &str, out: &Outcome) -> std::io::Result<Value> 
         "job": job,
         "created": now_local().format("%Y-%m-%dT%H:%M:%S").to_string(),
         "elapsed_s": (out.elapsed_s * 10.0).round() / 10.0,
-        "variants": out.variants,
+        "variants": variants,
     });
     write_json(&p.out_dir.join("meta.json"), &meta)?;
     Ok(meta)

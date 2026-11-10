@@ -47,6 +47,27 @@ export const zhTW = {
   libraryEmpty: "還沒有作品。",
   trash: "移到垃圾桶",
   trashConfirm: "把這首移到作品資料夾裡的 trash？（不會刪除檔案）",
+  variant: (n: number) => `版本 ${n}`,
+  checkOk: "自動品檢：沒發現問題",
+  checkNone: "自動品檢：未執行",
+  issue: {
+    clipping: (i: { count?: number }) => `爆音 ${i.count ?? ""} 處`,
+    clicks: (i: { count?: number }) => `咔噠聲 ${i.count ?? ""} 處`,
+    silence: (i: { end?: number }) => `中間有靜音（到 ${i.end ?? "?"} 秒）`,
+    cut_off: () => "結尾被切斷",
+    near_silent: () => "幾乎沒有聲音",
+    low_volume: (i: { rms_db?: number }) => `音量太小（${i.rms_db ?? "?"} dB）`,
+    dull: (i: { hf_pct?: number }) => `高頻很少，聽起來發悶（4 kHz 以上 ${i.hf_pct ?? "?"}%）`,
+  } as Record<string, (i: { count?: number; end?: number; rms_db?: number; hf_pct?: number }) => string>,
+  atTime: (s: number) => `${s.toFixed(1)} 秒`,
+  exportTitle: "後製與匯出",
+  loudness: "響度",
+  loudnessWorkflow: "依工作流程",
+  exportButton: "匯出",
+  exporting: "處理中…",
+  exportDone: (files: string) => `已匯出：${files}`,
+  exportLine: (lufs: number | null, tp: number | null) =>
+    [lufs != null && `${lufs.toFixed(1)} LUFS`, tp != null && `峰值 ${tp.toFixed(1)} dBTP`].filter(Boolean).join(" · "),
 
   statusTitle: "狀態",
   engine: "引擎",
@@ -102,6 +123,7 @@ export const zhTW = {
     spawn_failed: "無法啟動 ACE-Step worker。",
     engine_crashed: "ACE-Step worker 異常結束。",
     oom: "顯存不足。",
+    finalize: "後製失敗。",
   } as Record<string, string>,
 } as const;
 

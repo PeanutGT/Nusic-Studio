@@ -172,6 +172,16 @@ async fn annotate_take(state: State<'_, AppState>, id: String, fields: serde_jso
     state.library()?.annotate(&id, &fields).map_err(err)
 }
 
+/// Post-process and export one variant of a take (loudness, loop, fades... from its workflow).
+#[tauri::command]
+async fn finalize_take(state: State<'_, AppState>, id: String, input: studio::post::ops::FinalizeInput) -> Result<Value, EngineError> {
+    let (studio, ws, lib) = (state.studio.clone(), state.ws(), state.library()?);
+    tauri::async_runtime::spawn_blocking(move || studio.finalize(&ws, &lib, &id, &input))
+        .await
+        .map_err(|e| err(e.to_string()))?
+        .map_err(|e| EngineError::new("finalize", e, ""))
+}
+
 #[tauri::command]
 async fn trash_take(state: State<'_, AppState>, id: String) -> Result<bool, EngineError> {
     state.library()?.trash(&id).map_err(|e| err(e.to_string()))
@@ -244,6 +254,7 @@ pub fn run() {
             get_take,
             annotate_take,
             trash_take,
+            finalize_take,
             knob_table,
             set_setting,
             unset_setting

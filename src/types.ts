@@ -18,6 +18,7 @@ export type Overview = {
   workflows: { id: string; name_zh: string | null; name: string | null }[];
   instruments: Instrument[];
   presets: Record<string, Record<string, unknown>>;
+  loudness_presets: LoudnessPreset[];
   default_quality: string;
   tier: string;
   tier_caps: { max_duration?: number; max_batch?: number; lm_model?: string | null } | null;
@@ -64,6 +65,21 @@ export type QueueJob = {
 };
 export type QueueView = { jobs: QueueJob[]; current: string | null };
 
+export type LoudnessPreset = { id: string; label: string | null; lufs: number; true_peak_db: number | null };
+/** One automatic-check finding; `at` is seconds into the track. */
+export type Issue = { code: string; at: number; end?: number; count?: number; rms_db?: number; hf_pct?: number };
+export type TakeExport = {
+  variant: number;
+  base: string;
+  created: string;
+  files: string[];
+  lufs: number | null;
+  true_peak_db: number | null;
+  qc: string[];
+  issues: Issue[];
+  warnings: string[];
+};
+
 export type Take = {
   id: string;
   title: string;
@@ -76,6 +92,9 @@ export type Take = {
   variants: number;
   dir: string;
   files: string[];
+  checks: { index: number; file: string; qc: Issue[] | null }[];
+  exports: TakeExport[];
+  picked: number | null;
 };
 
 export function errorText(e: unknown): string {
