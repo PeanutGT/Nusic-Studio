@@ -63,3 +63,51 @@ fn every_qc_case_has_its_audio_file() {
         assert!(c["expected"]["inspect_audio"].is_array(), "{}", c["id"]);
     }
 }
+
+// ------------------------------------------------------------------ A2: planning parity
+
+use nusic_studio_lib::studio::{catalog::Catalog, config, plan, pyrandom::PyRandom};
+
+fn defaults() -> PathBuf {
+    golden_dir().join("defaults")
+}
+
+/// An empty workspace, so only built-in data is read (as when the golden files were exported).
+fn empty_ws() -> PathBuf {
+    std::env::temp_dir().join(format!("nusic-golden-empty-{}", std::process::id()))
+}
+
+#[test]
+fn key_picks_match_python_random() {
+    for c in cases(&load("plan/keys.json")) {
+        let options = c["options"].as_array().unwrap();
+        let got = PyRandom::from_str_seed(c["seed_string"].as_str().unwrap()).choice(options).unwrap();
+        assert_eq!(got, &c["expected"], "{}", c["seed_string"]);
+    }
+}
+
+#[test]
+fn resolved_params_match_v3_7() {
+    let (cfg, _) = config::load_config(&defaults(), &empty_ws()).unwrap();
+    for c in cases(&load("plan/params.json")) {
+        let inp = &c["input"];
+        let r = config::resolve_params(&cfg, inp["quality"].as_str(), inp["overrides"].as_object(), inp["tier"].as_str().unwrap());
+        assert_eq!(serde_json::to_value(&r).unwrap(), c["expected"], "{inp}");
+    }
+}
+
+#[test]
+fn plans_and_captions_match_v3_7() {
+    let (cfg, _) = config::load_config(&defaults(), &empty_ws()).unwrap();
+    let cat = Catalog::load(&defaults(), &empty_ws());
+    assert!(cat.problems.is_empty(), "{:?}", cat.problems);
+    let mut failures = Vec::new();
+    for c in cases(&load("plan/cases.json")) {
+        let input: plan::PlanInput = serde_json::from_value(c["input"].clone()).unwrap();
+        let got = plan::build_spec(&cfg, &cat, &input).unwrap();
+        if got != c["expected"] {
+            failures.push(format!("{}\n  got:      {got}\n  expected: {}", c["id"], c["expected"]));
+        }
+    }
+    assert!(failures.is_empty(), "{} plan case(s) differ:\n{}", failures.len(), failures.join("\n"));
+}

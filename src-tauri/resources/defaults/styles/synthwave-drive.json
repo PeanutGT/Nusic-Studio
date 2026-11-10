@@ -1,0 +1,45 @@
+{
+  "id": "synthwave-drive",
+  "name": "Synthwave Drive",
+  "description": "Neon 80s night-drive synthwave.",
+  "caption": "synthwave, retrowave, instrumental, analog synth arpeggios in sixteenths, gated reverb snare on 2 and 4, pulsing eighth-note bass, sawtooth lead, Aeolian mode, i-VI-III-VII progression, 80s analog production, chorus and delay",
+  "avoid": "vocals, acoustic instruments",
+  "bpm": [
+    100,
+    120
+  ],
+  "keys": [
+    "A minor",
+    "E minor",
+    "F# minor",
+    "D minor"
+  ],
+  "time_signature": "4",
+  "duration": {
+    "min": 45,
+    "default": 120,
+    "max": 240
+  },
+  "loopable": true,
+  "tags": [
+    "game",
+    "personal",
+    "video"
+  ],
+  "name_zh": "合成器浪潮",
+  "description_zh": "80 年代類比合成器、夜間駕駛感。",
+  "instruments": {
+    "suggest": [
+      "synth",
+      "arp",
+      "bass"
+    ],
+    "avoid": [
+      "guitar-acoustic",
+      "violin",
+      "cello",
+      "harp",
+      "ukulele"
+    ]
+  }
+}

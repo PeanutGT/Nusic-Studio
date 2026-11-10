@@ -4,23 +4,24 @@
 //! Cancel kills the worker's process tree (the only way to stop ACE-Step mid-diffusion and
 //! free the VRAM); the next job starts a fresh worker. A worker that exits on
 //! its own fails the running job and is restarted by the next job.
+//! The engine never touches take folders: the queue (`studio::queue`) finishes or discards them.
 
 pub mod gpu;
 mod job;
 pub mod protocol;
 pub mod python;
 
-pub use protocol::{GenerateInput, Variant};
+pub use protocol::Variant;
 
 use protocol::Event;
 use serde::Serialize;
 use serde_json::Value;
 use std::collections::VecDeque;
 use std::io::{BufRead, BufReader, Write};
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 use std::process::{Child, ChildStdin, Command, Stdio};
 use std::sync::{Arc, Mutex, MutexGuard};
-use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
+use std::time::{Duration, Instant};
 
 const LOG_LINES: usize = 300;
 
@@ -77,7 +78,18 @@ pub struct JobView {
     pub out_dir: String,
     pub variants: Vec<Variant>,
     pub effective: Value,
+    pub lm_metadata: Value,
+    pub time_costs: Value,
     pub elapsed_s: Option<f64>,
+}
+
+/// One job for the worker: `request` is the full `generate` line (see `studio::pipeline::prepare`).
+#[derive(Debug, Clone)]
+pub struct Submit {
+    pub id: String,
+    pub caption: String,
+    pub out_dir: PathBuf,
+    pub request: Value,
 }
 
 #[derive(Debug, Clone, Serialize)]
@@ -139,11 +151,8 @@ impl Engine {
         self.lock().log.iter().cloned().collect()
     }
 
-    /// Start one generation into a new take folder under `<workspace>/output`. Returns the job id.
-    pub fn generate(&self, launch: &Launch, ace_dir: &Path, workspace: &Path, input: GenerateInput) -> Result<String, EngineError> {
-        if input.caption.trim().is_empty() {
-            return Err(EngineError::new("empty_caption", "caption is empty", ""));
-        }
+    /// Send one job to the worker (starting it if needed). Fails with `busy` while a job runs.
+    pub fn generate(&self, launch: &Launch, job: Submit) -> Result<String, EngineError> {
         let mut g = self.lock();
         if g.status.job.as_ref().is_some_and(|j| j.status == JobStatus::Running) {
             return Err(EngineError::new("busy", "a generation is already running", "Wait for it or cancel it first."));
@@ -152,35 +161,33 @@ impl Engine {
             self.stop_locked(&mut g);
             self.spawn_locked(&mut g, launch)?;
         }
-        let out_dir = new_take_dir(&workspace.join("output"), &input.caption)
-            .map_err(|e| EngineError::new("output_dir", format!("cannot create the output folder: {e}"), ""))?;
-        let job = format!("j{}", now_millis());
-        let seed = if input.seed < 0 { random_seed() } else { input.seed };
-        let req = protocol::generate_request(&job, &input, seed, ace_dir, &out_dir);
+        let mut req = job.request;
+        req["job"] = Value::String(job.id.clone());
         let line = format!("{req}\n");
         let proc = g.proc.as_mut().expect("worker was just started");
         if let Err(e) = proc.stdin.write_all(line.as_bytes()).and_then(|_| proc.stdin.flush()) {
-            let _ = std::fs::remove_dir_all(&out_dir);
             self.stop_locked(&mut g);
             return Err(EngineError::new("worker_unavailable", format!("cannot send the job to the worker: {e}"), ""));
         }
         g.status.state = WorkerState::Busy;
         g.status.job = Some(JobView {
-            id: job.clone(),
-            caption: input.caption,
+            id: job.id.clone(),
+            caption: job.caption,
             status: JobStatus::Running,
             phase: "queued".into(),
             pct: 0.0,
             detail: String::new(),
             warnings: Vec::new(),
             error: None,
-            out_dir: out_dir.to_string_lossy().into_owned(),
+            out_dir: job.out_dir.to_string_lossy().into_owned(),
             variants: Vec::new(),
             effective: Value::Null,
+            lm_metadata: Value::Null,
+            time_costs: Value::Null,
             elapsed_s: None,
         });
         self.publish(g);
-        Ok(job)
+        Ok(job.id)
     }
 
     /// Cancel the running job by killing the worker. `false` when nothing was running.
@@ -194,7 +201,6 @@ impl Engine {
         if let Some(job) = g.status.job.as_mut() {
             job.status = JobStatus::Cancelled;
             job.phase = "cancelled".into();
-            let _ = std::fs::remove_dir_all(&job.out_dir);
         }
         self.publish(g);
         true
@@ -304,7 +310,6 @@ impl Engine {
                 format!("the ACE-Step worker exited with code {code} without a result"),
                 tail.join("\n"),
             ));
-            let _ = std::fs::remove_dir_all(&job.out_dir);
         }
         self.publish(g);
     }
@@ -365,13 +370,15 @@ fn apply(status: &mut EngineStatus, event: Event) {
                 push_unique(&mut job.warnings, format!("retrying: {reason}"));
             }
         }
-        Event::Result { variants, effective, warnings, elapsed_s } => {
+        Event::Result { variants, effective, lm_metadata, time_costs, warnings, elapsed_s } => {
             if let Some(job) = job {
                 job.status = JobStatus::Done;
                 job.phase = "done".into();
                 job.pct = 1.0;
                 job.variants = variants;
                 job.effective = effective;
+                job.lm_metadata = lm_metadata;
+                job.time_costs = time_costs;
                 job.elapsed_s = elapsed_s;
                 for w in warnings {
                     push_unique(&mut job.warnings, w);
@@ -382,7 +389,6 @@ fn apply(status: &mut EngineStatus, event: Event) {
             if let Some(job) = job {
                 job.status = JobStatus::Failed;
                 job.error = Some(EngineError { code, message, hint });
-                let _ = std::fs::remove_dir_all(&job.out_dir);
             }
         }
         Event::Other => {}
@@ -405,72 +411,4 @@ pub(crate) fn no_window(cmd: &mut Command) {
     }
     #[cfg(not(windows))]
     let _ = cmd;
-}
-
-/// `<root>/<YYYYmmdd-HHMMSS>-<slug>`, made unique with `-2`, `-3`, ... (same naming as v3.7 takes).
-pub fn new_take_dir(root: &Path, caption: &str) -> std::io::Result<PathBuf> {
-    std::fs::create_dir_all(root)?;
-    let base = format!("{}-{}", chrono::Local::now().format("%Y%m%d-%H%M%S"), slugify(caption));
-    let mut dir = root.join(&base);
-    let mut n = 2;
-    while dir.exists() {
-        dir = root.join(format!("{base}-{n}"));
-        n += 1;
-    }
-    std::fs::create_dir(&dir)?;
-    Ok(dir)
-}
-
-pub fn slugify(text: &str) -> String {
-    let mut out = String::new();
-    for c in text.chars().flat_map(char::to_lowercase) {
-        if c.is_ascii_alphanumeric() {
-            out.push(c);
-        } else if !out.ends_with('-') && !out.is_empty() {
-            out.push('-');
-        }
-        if out.len() >= 32 {
-            break;
-        }
-    }
-    let out = out.trim_end_matches('-');
-    if out.is_empty() { "track".into() } else { out.into() }
-}
-
-fn now_millis() -> u128 {
-    SystemTime::now().duration_since(UNIX_EPOCH).map_or(0, |d| d.as_millis())
-}
-
-fn random_seed() -> i64 {
-    let nanos = SystemTime::now().duration_since(UNIX_EPOCH).map_or(0, |d| d.subsec_nanos() as i64 ^ d.as_secs() as i64);
-    1 + nanos.rem_euclid(2_147_483_646)
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn slug_keeps_ascii_words() {
-        assert_eq!(slugify("Calm Piano, rain & cafe!"), "calm-piano-rain-cafe");
-        assert_eq!(slugify("戰敗的安魂曲"), "track");
-        assert_eq!(slugify("lofi 戰鬥 beat"), "lofi-beat");
-        assert!(slugify(&"a".repeat(100)).len() <= 32);
-    }
-
-    #[test]
-    fn take_dirs_never_collide() {
-        let root = std::env::temp_dir().join(format!("nusic-take-{}", std::process::id()));
-        let _ = std::fs::remove_dir_all(&root);
-        let a = new_take_dir(&root, "x").unwrap();
-        let b = new_take_dir(&root, "x").unwrap();
-        assert_ne!(a, b);
-        assert!(a.is_dir() && b.is_dir());
-    }
-
-    #[test]
-    fn random_seed_is_positive_31_bit() {
-        let s = random_seed();
-        assert!((1..=2_147_483_646).contains(&s));
-    }
 }

@@ -45,8 +45,9 @@
       }
     },
     "shortDescription": "Local AI music studio",
-    "resources": [
-      "resources/ace_worker.py"
-    ]
+    "resources": {
+      "resources/ace_worker.py": "resources/ace_worker.py",
+      "resources/defaults/": "resources/defaults/"
+    }
   }
 }
