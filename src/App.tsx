@@ -246,7 +246,7 @@ export default function App() {
         </details>
       </section>
 
-      <Library takes={takes} onTrash={trashTake} />
+      <Library takes={takes} presets={overview?.loudness_presets ?? []} onTrash={trashTake} onChanged={loadTakes} />
 
       <footer className="muted small-text">
         {t.platform} {info ? info.target : "—"}

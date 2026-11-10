@@ -78,6 +78,15 @@ impl Library {
                     "picked": ann.get("picked").cloned().unwrap_or(Value::Null),
                     "dir": t["dir"],
                     "files": t["variants"].as_array().into_iter().flatten().map(|v| v["file"].clone()).collect::<Vec<_>>(),
+                    // automatic check per variant, and the finished exports (A3)
+                    "checks": t["variants"].as_array().into_iter().flatten()
+                        .map(|v| json!({"index": v["index"], "file": v["file"], "qc": v.get("qc").cloned().unwrap_or(Value::Null)}))
+                        .collect::<Vec<_>>(),
+                    "exports": t["finals"].as_array().into_iter().flatten()
+                        .map(|f| json!({"variant": f["variant"], "base": f["base"], "created": f["created"], "files": f["files"],
+                                        "lufs": f["report"]["lufs"], "true_peak_db": f["report"]["true_peak_db"],
+                                        "qc": f["report"]["qc"], "issues": f["report"]["issues"], "warnings": f["warnings"]}))
+                        .collect::<Vec<_>>(),
                 })
             })
             .collect();

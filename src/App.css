@@ -227,3 +227,30 @@ button.link {
   color: var(--accent);
   font-size: 0.85rem;
 }
+
+.variants {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0;
+}
+
+.variants li {
+  padding: 2px 0;
+  border: none;
+}
+
+.issues {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.chip.warn {
+  border: 1px solid #c9822b;
+  color: #c9822b;
+}
+
+.export {
+  margin: 6px 0;
+  align-items: center;
+}

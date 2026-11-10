@@ -4,6 +4,8 @@ use super::catalog::Catalog;
 use super::config::{self, Prov};
 use super::json::{Obj, read_json, set_dotted, unset_dotted, write_json};
 use super::plan::{self, PlanInput};
+use super::post::ops::{self, FinalizeInput};
+use super::takes::Library;
 use serde_json::{Value, json};
 use std::path::{Path, PathBuf};
 
@@ -92,10 +94,19 @@ impl Studio {
         Ok(json!({
             "styles": styles, "moods": moods, "workflows": workflows, "instruments": instruments,
             "presets": cfg["quality"]["presets"], "default_quality": cfg["quality"]["default"],
+            "loudness_presets": loudness_presets(&cfg),
+            "workflow_steps": cat.workflows.iter().map(|(k, w)| (k.clone(), json!(ops::workflow_steps(Some(w))))).collect::<Obj>(),
             "default_workflow": cfg["workflow"]["default"], "tier": tier,
             "tier_caps": cfg["hardware"]["tiers"].get(tier).cloned().unwrap_or(Value::Null),
             "problems": problems,
         }))
+    }
+
+    /// Post-process one variant of a take with its workflow (or the request's steps) and export it.
+    pub fn finalize(&self, ws: &Path, lib: &Library, id: &str, input: &FinalizeInput) -> Result<Value, String> {
+        let take = lib.get(id).ok_or_else(|| format!("unknown take '{id}'"))?;
+        let (cfg, _) = self.config(ws)?;
+        ops::run_for_take(&take, &cfg, &self.catalog(ws).workflows, input)
     }
 
     pub fn knob_table(&self, ws: &Path, quality: Option<&str>, tier: &str) -> Result<Value, String> {
@@ -122,4 +133,15 @@ impl Studio {
         let wf_ids: Vec<String> = self.catalog(ws).workflows.keys().cloned().collect();
         Ok(config::validate_config(&cfg, &self.knobs(), &wf_ids))
     }
+}
+
+/// `postprocess.loudness_presets` as a list for pickers: id, label, LUFS, true-peak ceiling.
+fn loudness_presets(cfg: &Value) -> Vec<Value> {
+    cfg["postprocess"]["loudness_presets"]
+        .as_object()
+        .into_iter()
+        .flatten()
+        .filter(|(k, _)| !k.starts_with('_'))
+        .map(|(k, v)| json!({"id": k, "label": v.get("label"), "lufs": v.get("lufs"), "true_peak_db": v.get("true_peak_db")}))
+        .collect()
 }
