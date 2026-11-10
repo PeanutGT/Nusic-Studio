@@ -254,6 +254,10 @@ impl Queue {
             discard(&e.message);
             return fail(e);
         }
+        if self.cancelled() {
+            // cancel arrived between the check above and the send: the engine had nothing to stop yet
+            self.s.engine.cancel();
+        }
         // Follow the engine until this job ends.
         let ended = loop {
             let status = self.s.engine.status();
